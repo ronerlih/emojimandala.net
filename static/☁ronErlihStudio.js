@@ -81,6 +81,8 @@ function mobileAndTabletcheck() {
     return check;
 };
 function isSafari() {
+   return false;
+   
     if (navigator.userAgent.indexOf('Safari') != - 1 && navigator.userAgent.indexOf('Chrome') == - 1) {
         var safariCheck = true;
     } else {
@@ -121,7 +123,7 @@ function cssListen() {
     //       console.log(`css property:                     ${cssColorProp}`);
     if ( String(cssColorProp) == "rgb(0, 0, 0)") {
         clearInterval(cssInterval);
-        $('#bestOnSpan, #loadingSpan, #creditSpan, #studioCredit').css('display', 'block');
+        $('#bestOnSpan, #loadingSpan, #creditSpan, #studioCredit', '#nft').css('display', 'block');
         checkForBodyLoad();
     }
 }
@@ -136,8 +138,8 @@ function platformStylesAndLogic() {
 
     } else {
         if ( safariCheck == false ) {
-            document.getElementById("best").innerHTML = "(desktop edition)";
-            document.getElementById("title-span").innerHTML = "<em>emojiMandala.net</em><br>web art | 2017<br><em style='font-size:0.8em'>desktop edition</em>";
+            document.getElementById("best").innerHTML = "NFT";
+            document.getElementById("title-span").innerHTML = "<em>emojiMandala.net</em>";
             var myStyle = document.createElement("link");
             var myStyle = document.createElement("style");
         myStyle.innerHTML = my_style;
