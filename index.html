@@ -60,7 +60,6 @@ font-family:georgia;
 #nft {
    border: 2px;
    padding: 10px;
-   margin: auto;
    position: absolute; 
    font-size: 1rem;
    left:20px;
@@ -100,7 +99,36 @@ font-family:georgia;
 #nft li * {
    margin: 5px;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  text-align: center;
+  border-radius: 10px;
+  background: white;
+  padding: 15px;
+  display: inline-block;
+  width: 360px;
+  line-height: 30px;
+  vertical-align: baseline;
+  text-align: left;
+  margin-left: 10px;
+  border: 2px solid;
+   font-weight: 200;
+   font-size: 18px;
+   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 .spriteMobile{clip: rect(2px,70px,70px,2px);}
 .cloudLogo{opacity:1;
   -webkit-transform: translate(0px,4px);
@@ -174,7 +202,8 @@ font-family:georgia;
 <div id="emojiListDiv"></div>
 <div id="spanContainter">
    <div id="nft">
-      <h3>NFTs</h3>
+      <h3 class="tooltip">Thank you!<span class="tooltiptext"> <font style="font-size:40px;vertical-align: text-bottom;">🤯 </font>When you purchase an NTF from the <a href="https://opensea.io/collection/emoji-mandala" alt="emojimandala collection at opense.io">collection</a> you can set it's nickname!</span>
+      </h3>
       <ul class="collection">
  
 
