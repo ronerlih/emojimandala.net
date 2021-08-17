@@ -33,7 +33,7 @@
 #studioCredit{
 display:none;color:#2458a1; position:absolute; font-family:georgia; left:5px; bottom: 8px; font-size:0.8em;
 line-height:0.5;z-index: 1000;}
-/* body{position: relative;;} */
+body{overflow-x: hidden;}
 #mobilePrompt{
 padding:10px;
 display:none;
@@ -63,6 +63,8 @@ font-family:georgia;
    margin: auto;
    position: absolute; 
    font-size: 1rem;
+   left:20px;
+   top:90vh;
 }
 #nft > ul {
    list-style-type : none;
@@ -75,19 +77,20 @@ font-family:georgia;
    display: flex;
    align-items: center;
    flex-wrap: wrap;
+   word-break: keep-all;
+   margin-top:10px;
 }
 .nft-icon {
    flex: 30px 0 0;
 }
 .nft-title  {
-   flex:1;
+   flex:1.5;
 }
 
 .nft-owner {
-   flex:1.2
+   flex:1
 }
 .nft-link {
-   flex-basis: 100%;
 }
 #nft li img {
     width: 30px;
@@ -115,12 +118,24 @@ font-family:georgia;
       overflow:hidden;}
       header{background: white;}
       #spanContainter {}
-      .container.main-emojipedia {background: white;margin:0px; margin:auto}
+      .container.main-emojipedia {background: white;margin:0px; width:100%; padding: 3% 20% 0 20%} 
       .main-emojipedia{
          position: relative;
          z-index: 2;
          
       }
+      .rotateHue {
+   animation: rotateHue 100s infinite;
+}
+@keyframes rotateHue {
+   0% {
+      filter: hue-rotate(0deg);
+   }
+   100% {
+      filter: hue-rotate(360deg);
+   }
+}
+
 </style>
 
 </head>
@@ -159,17 +174,9 @@ font-family:georgia;
 <div id="emojiListDiv"></div>
 <div id="spanContainter">
    <div id="nft">
-      <h3>NFT Owners</h3>
+      <h3>NFTs</h3>
       <ul class="collection">
-         <li class="collection-item avatar">
-           <img class="nft-icon" src="/static/img/node-root-face.png" alt="" class="circle">
-           <div class="nft-title">nickname: <em>root-node-emoji</em></div>
-           <p class="nft-owner">Owned by: <em>ronchuck</em><br>
-           </p>
-           <div class="nft-link">
-            <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425" ><i class="material-icons">View on OpenSea.io</i></a>
-           </div>
-         </li>
+ 
 
        </ul>
    </div>    <div id="title-span"><em>emojiMandala.net</em><br>NFTs</div></div>

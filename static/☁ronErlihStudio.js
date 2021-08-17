@@ -1,4 +1,26 @@
+const nfts = 
+   {
+      0: {
+      emoji_link: "/static/img/node-root-face.png",
+      owener: "ronchuck",
+      emoji_nickname: "root-emoji",
+      link: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425"
+   },
+   100: {
+      emoji_link: "/static/img/node-root-face.png",
+      owener: "ronchuck",
+      emoji_nickname: "faci",
+      link: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425"
+   },
+   200:{
+      emoji_link: "/static/img/node-root-face.png",
+      owener: "ronchuck",
+      emoji_nickname: " 🌬️💨",
+      link: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425"
+   },
+}
 
+const nftList = document.querySelector("#nft > .collection")
 var j = 0;
 var safariCheck = isSafari();
 var JsListItems;
@@ -110,9 +132,16 @@ function loadEmojis() {
     for (i = 0; i <= 2371; i++) {
         spriteImages[i] = document.createElement('img');
         $(spriteImages[i]).attr('id', "emoji_0" + String(i));
+
+       
         if(i == 2371)
+        
         {
-            console.log('sprite images increment');
+         spriteImages.shift();
+         spriteImages.unshift(document.createElement('img'));
+        $(spriteImages[0]).attr('id', "emoji_000" );
+        $(spriteImages[0]).attr('src', "/static/img/node-root-face.png");
+      console.log('sprite images increment');
              incrementCounter();
         }
     }
@@ -184,12 +213,31 @@ function incrementCounter() {
 }
 function checkForBodyLoad() {
 
+   loadNFTs();
+
     var lastEmoji = document.getElementById("lastBodyEmoji");
     lastEmoji.addEventListener('load', loadEmojis());
     if ($(this).complete) {
         lastEmoji.trigger('load');
     }
     lastEmoji.src = 'static/img/emoji_00081.png';
+}
+function loadNFTs() {
+   Object.values(nfts).forEach( nft => {
+      console.log(nft)
+      const itmeEl = document.createElement('li');
+      itmeEl.classList.add('collection-item', 'avatar');
+      itmeEl.innerHTML = `
+           <img class="nft-icon rotateHue" src=${nft.emoji_link} alt="" class="circle">
+           <div class="nft-title"><em>${nft.emoji_nickname}</em></div>
+           <p class="nft-owner">Owner: <em>${nft.owener}</em><br>
+           </p>
+           <div class="nft-link">
+            <a href=${nft.link} ><i class="material-icons">View on OpenSea.io</i></a>
+           </div>
+         `
+      nftList.appendChild(itmeEl);
+         })
 }
 function desktopClient() {
 
@@ -246,7 +294,25 @@ function desktopClient() {
 
 
     function addEmoji() {
-        angle = 0.1 * i;
+      if(nfts[i]) {
+         const nicknameContainer = document.createElement('div');
+         nicknameContainer.style.position = "relative";
+         const nicknameEl = document.createElement('div');
+         nicknameEl.style.position = "absolute";
+         nicknameEl.style.left = "-70px";
+         nicknameEl.style.top = "50px";
+         nicknameEl.style.width = "160px";
+
+
+         nicknameEl.textContent = nfts[i].emoji_nickname
+         nicknameContainer.appendChild(nicknameEl);
+         spriteImages[i].style.width = '72px'
+         spriteImages[i].classList.add('rotateHue')
+         nicknameContainer.appendChild(spriteImages[i]);
+         spriteImages[i] = nicknameContainer;
+      }
+
+        angle = 0.1 * i  + 0.1;
 
         cssLeft = ( 100 + ( i * 1.1 )) * Math.cos((angle * 1.8 + (angle) / 3)) + (angle * 0.24) + windowWidth / 2 - emojiSize / 2;
         cssTop = ( 100 + ( i * 1.1 )) * Math.sin((angle * 1.8 + (angle) / 3)) + (angle * 0.24) - emojiSize / 2;
@@ -263,7 +329,7 @@ function desktopClient() {
         "z-index: 10000;" +
         "border: 0;" +
         "height: auto; display:block;visibility:visible;";
-
+   
         emojiListDiv.appendChild(spriteImages[i]);
 
         emojiListDiv.style.cssText += "left: " + screen.width / 2 - $(emojiListDiv).width() / 2 + "px;";
