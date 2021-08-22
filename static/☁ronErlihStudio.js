@@ -399,15 +399,9 @@ function desktopClient() {
 
       angle = 0.1 * i + 0.1;
 
-      if(mobileCheck){
-         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( containerSize / 4 + emojiSize/4)  ;
-         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( containerSize / 4 + emojiSize/4);
-      } else {
-         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( containerSize /2 - emojiSize/2.24)  ;
-         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( containerSize / 2 - emojiSize/2.24);
+      cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( containerSize /2 - emojiSize/1.8)  ;
+      cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( containerSize / 2 - emojiSize/2);
 
-      }
-      
       if (i <= JsListItems.length - 1) {
          JsListItems[i].style.cssText = "display: none;";
       }
