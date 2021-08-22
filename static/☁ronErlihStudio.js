@@ -13,6 +13,8 @@ let nfts = {
 
 const nftList = document.querySelector("#nft > .collection");
 var j = 0;
+var containerSize = window.innerHeight > document.body.clientWidth
+   ?  document.body.clientWidth : window.innerHeight;
 var safariCheck = isSafari();
 var JsListItems;
 var spriteImages = [];
@@ -60,10 +62,11 @@ var my_style = `
    #emojiListDiv {
       z-index:1000;
       position:absolute;
-      top:0;
-      left:0;
-      height:100vw;
-      width:100vw;
+      left: ${(document.body.clientWidth - containerSize)/2}px;
+      height:${containerSize}px;
+      width:${containerSize}px;
+      align-self:center;
+      display:grid;
       -webkit-perspective:500px
       ;-moz-perspective:500px
       ;-o-perspective:500px
@@ -232,7 +235,7 @@ function platformStylesAndLogic() {
    if (mobileCheck == true) {
       document.getElementById("best").innerHTML = "(mobile edition)";
       document.getElementById("title-span").innerHTML =
-         "<em>emojiMandala.net</em><br>web art | 2017<br><em style='font-size:0.8em'>mobile edition</em>";
+         "<div><em>emojiMandala.net</em>";
       var myStyle = document.createElement("style");
       myStyle.innerHTML = mobile_style;
       document.head.appendChild(myStyle);
@@ -397,12 +400,11 @@ function desktopClient() {
       angle = 0.1 * i + 0.1;
 
       if(mobileCheck){
-
-         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( windowWidth / 4 + emojiSize/4)  ;
-         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( windowWidth / 4 + emojiSize/4);
+         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( containerSize / 4 + emojiSize/4)  ;
+         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( containerSize / 4 + emojiSize/4);
       } else {
-         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( windowWidth /2 - emojiSize/2.24)  ;
-         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( windowWidth / 2 - emojiSize/2.24);
+         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( containerSize /2 - emojiSize/2.24)  ;
+         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( containerSize / 2 - emojiSize/2.24);
 
       }
       
