@@ -40,6 +40,7 @@ var cssInterval;
 var emojiListDiv = document.getElementById("emojiListDiv");
 var counterDrop = 0;
 var parseCounter = 0;
+console.log(window.innerHeight)
 var safariElementAsTextNode =
    '<h2 style="margin:30px;">emojiMandala.net</h2><p>currently in development for Safari on a desktop.<br>please visit with a different browser (Chrome, Firefox, Opera, or IE)<br><br>or visit on your mobile (also in Safari).</p><br><img width="400" src="http://emojimandala.net/static/img/ipad_spiral_light.gif"/><div id="creditSpanSafari"><a href="http://ronErlihStudio.com" target="_blank"><br><br><img width="50" height="auto" src="http://emojimandala.net/static/img/cloud_500.png"/><h3>ronErlihStudio</h3></a>';
 var my_style = `
@@ -63,6 +64,7 @@ var my_style = `
       z-index:1000;
       position:absolute;
       left: ${(document.body.clientWidth - containerSize)/2}px;
+      top: calc( calc(100vh - ${ containerSize}px) / 2);
       height:${containerSize}px;
       width:${containerSize}px;
       align-self:center;
@@ -309,11 +311,9 @@ function fetchOpeanSeaApi() {
 }
 function loadNFTs() {
    Object.values(nfts).forEach((nft) => {
-      console.log(nft);
       const itmeEl = document.createElement("li");
       itmeEl.classList.add("collection-item", "avatar");
       // creator, description,top_ownerships, image_url
-      console.log(nft);
       itmeEl.innerHTML = `
            <img class="nft-icon rotateHue" src=${nft.image_url} alt="" class="circle">
            <div class="nft-title"><em>${nft.traits[3].trait_type}</em></div>
