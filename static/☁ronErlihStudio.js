@@ -40,10 +40,86 @@ var counterDrop = 0;
 var parseCounter = 0;
 var safariElementAsTextNode =
    '<h2 style="margin:30px;">emojiMandala.net</h2><p>currently in development for Safari on a desktop.<br>please visit with a different browser (Chrome, Firefox, Opera, or IE)<br><br>or visit on your mobile (also in Safari).</p><br><img width="400" src="http://emojimandala.net/static/img/ipad_spiral_light.gif"/><div id="creditSpanSafari"><a href="http://ronErlihStudio.com" target="_blank"><br><br><img width="50" height="auto" src="http://emojimandala.net/static/img/cloud_500.png"/><h3>ronErlihStudio</h3></a>';
-var my_style =
-   "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
-var mobile_style =
-   "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.7}#emojiListDiv{z-index:1000}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-72deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
+var my_style = `
+#emojiListDiv img{
+   margin:0;padding:0
+}
+   .fadeOut {
+      -o-animation:fadeOut 10s 1 linear forwards;
+      -ms-animation:fadeOut 10s 1 linear forwards;
+      -moz-animation:fadeOut 10s 1 linear forwards;
+      -webkit-animation:fadeOut 10s 1 linear forwards;
+      animation:fadeOut 10s 1 linear forwards}
+   .fadeSlow {
+      -o-animation:fadeOutSlow 1s 1 linear forwards;
+      -ms-animation:fadeOutSlow 1s 1 linear forwards;
+      -moz-animation:fadeOutSlow 1s 1 linear forwards;
+      -webkit-animation:fadeOutSlow 1s 1 linear forwards;
+      animation:fadeOutSlow 1s 1 linear forwards}
+   img{opacity:.8 }
+   #emojiListDiv {
+      z-index:1000;
+      position:absolute;
+      top:0;
+      left:0;
+      height:100vw;
+      width:100vw;
+      -webkit-perspective:500px
+      ;-moz-perspective:500px
+      ;-o-perspective:500px
+      ;perspective:500px
+      ;-webkit-animation-name:spin;
+      -webkit-animation-duration:54s;
+      -webkit-animation-iteration-count:infinite
+      ;-webkit-animation-timing-function:linear;
+      -moz-animation-name:spin;
+      -moz-animation-duration:54s;
+      -moz-animation-iteration-count:infinite;
+      -moz-animation-timing-function:linear;
+      -ms-animation-name:spin;-ms-animation-duration:54s;
+      -ms-animation-iteration-count:infinite;
+      -ms-animation-timing-function:linear;
+      animation-name:spin;
+      animation-duration:54s;
+      animation-iteration-count:infinite;
+      animation-timing-function:linear;
+      transform-origin: center;
+   }
+   #emojiListDiv img {
+      clip:rect(2px,70px,70px,2px)
+   }
+   @-ms-keyframes spin{
+      0%{-ms-transform:rotate(0) scale(1.5,1.5)}
+      25%{-ms-transform:rotate(-90deg) scale(0,0)}
+      40%{-ms-transform:rotate(-144deg) scale(1,1)}
+      70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}
+      100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}
+   @-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}
+      25%{-moz-transform:rotate(-90deg) scale(0,0)}
+      40%{-moz-transform:rotate(-144deg) scale(1,1)}
+      70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}
+      100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}
+      }
+   @-webkit-keyframes spin{
+      0%{-webkit-transform:rotate(0) scale(1.5,1.5)}
+      25%{-webkit-transform:rotate(-90deg) scale(0,0)}
+      40%{-webkit-transform:rotate(-144deg) scale(1,1)}
+      70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}
+      100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}
+   }
+   @keyframes spin{
+      0%{transform:rotate(0) scale(1,1)}
+      20%{transform:rotate(-82deg) scale(1,1)}
+      40%{transform:rotate(-144deg) scale(1,1)}
+      70%{transform:rotate(-252deg) scale(1,1)}
+      100%{transform:rotate(-360deg) scale(1,1)}
+   }
+   @-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}`;
+   var mobile_style = my_style;
+   "#emoji-container img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
+// "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
+// "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(0,0)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(0,0)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(0,0)}70%{-webkit-transform:rotate(-252deg) scale(0,0)}100%{-webkit-transform:rotate(-360deg) scale(0,0)}}@keyframes spin{0%{transform:rotate(0) scale(1,1)}20%{transform:rotate(-82deg) scale(1,1)}40%{transform:rotate(-144deg) scale(1,1)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1,1)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
+// "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.7}#emojiListDiv{z-index:1000}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-72deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
 var createImage = function (src) {
    var spriteImageObject = new Image();
    return spriteImageObject;
@@ -126,10 +202,9 @@ function loadEmojis() {
       spriteTempImg.push(createImage());
       spriteTempImg[j].onload = incrementCounter;
       spriteTempImg[j].onerror = reloadImageElement;
-      spriteSrc = "static/css/cssSprites/emoji-" + String(j) + "-lowRes.png";
+      spriteSrc = "static/css/cssSprites/emoji-" + String(j) + "-lowRes.webp";
       spriteTempImg[j].src = spriteSrc;
    }
-   console.log("sprite images onload for loop is done");
    for (i = 0; i <= 2371; i++) {
       spriteImages[i] = document.createElement("img");
       $(spriteImages[i]).attr("id", "emoji_0" + String(i));
@@ -187,7 +262,7 @@ function incrementCounter() {
    console.log("onload event fired on image no. " + counter);
    counter++;
 
-   if (mobileCheck == false) {
+   if (true) {
       bar.style.width = counter / 0.13 + "%";
       if (counter == 13 && scriptFlag == false) {
          JsListItems = $("#hook").find("img");
@@ -311,7 +386,7 @@ function desktopClient() {
 
          // creator, description,top_ownerships, image_url
 
-         nicknameEl.textContent = nfts[i].traits[3].trait_type
+         nicknameEl.textContent = nfts[i].traits[3].trait_type;
          nicknameContainer.appendChild(nicknameEl);
          spriteImages[i].style.width = "72px";
          spriteImages[i].classList.add("rotateHue");
@@ -321,8 +396,16 @@ function desktopClient() {
 
       angle = 0.1 * i + 0.1;
 
-      cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + angle * 0.24 + windowWidth / 2 - emojiSize / 2;
-      cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) + angle * 0.24 - emojiSize / 2;
+      if(mobileCheck){
+
+         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( windowWidth / 4 + emojiSize/4)  ;
+         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( windowWidth / 4 + emojiSize/4);
+      } else {
+         cssLeft = (100 + i * 1.1) * Math.cos(angle * 1.8 + angle / 3) + ( windowWidth /2 - emojiSize/2.24)  ;
+         cssTop = (100 + i * 1.1) * Math.sin(angle * 1.8 + angle / 3) +  ( windowWidth / 2 - emojiSize/2.24);
+
+      }
+      
       if (i <= JsListItems.length - 1) {
          JsListItems[i].style.cssText = "display: none;";
       }

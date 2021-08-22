@@ -16,7 +16,10 @@
    border: 3px solid blue;
    animation: rotateHue 1s infinite;
 }
-
+#emoji-container {
+   width: 100vw;
+    height: 100vh;
+}
 img {
    opacity: 0.8;
    margin: 0;
