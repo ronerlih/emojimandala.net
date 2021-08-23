@@ -45,7 +45,7 @@ var safariElementAsTextNode =
    '<h2 style="margin:30px;">emojiMandala.net</h2><p>currently in development for Safari on a desktop.<br>please visit with a different browser (Chrome, Firefox, Opera, or IE)<br><br>or visit on your mobile (also in Safari).</p><br><img width="400" src="http://emojimandala.net/static/img/ipad_spiral_light.gif"/><div id="creditSpanSafari"><a href="http://ronErlihStudio.com" target="_blank"><br><br><img width="50" height="auto" src="http://emojimandala.net/static/img/cloud_500.png"/><h3>ronErlihStudio</h3></a>';
 var my_style = `
 #emojiListDiv img{
-   margin:0;padding:0
+   margin:0;padding:0;
 }
    .fadeOut {
       -o-animation:fadeOut 10s 1 linear forwards;
@@ -69,10 +69,6 @@ var my_style = `
       width:${containerSize}px;
       align-self:center;
       display:grid;
-      -webkit-perspective:500px
-      ;-moz-perspective:500px
-      ;-o-perspective:500px
-      ;perspective:500px
       ;-webkit-animation-name:spin;
       -webkit-animation-duration:54s;
       -webkit-animation-iteration-count:infinite
@@ -84,41 +80,52 @@ var my_style = `
       -ms-animation-name:spin;-ms-animation-duration:54s;
       -ms-animation-iteration-count:infinite;
       -ms-animation-timing-function:linear;
-      animation-name:spin;
-      animation-duration:54s;
+      animation-name:spin, scale;
+      animation-duration:60s;
       animation-iteration-count:infinite;
-      animation-timing-function:linear;
       transform-origin: center;
    }
    #emojiListDiv img {
       clip:rect(2px,70px,70px,2px)
    }
-   @-ms-keyframes spin{
-      0%{-ms-transform:rotate(0) scale(1.5,1.5)}
-      25%{-ms-transform:rotate(-90deg) scale(0,0)}
-      40%{-ms-transform:rotate(-144deg) scale(1,1)}
-      70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}
-      100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}
-   @-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}
-      25%{-moz-transform:rotate(-90deg) scale(0,0)}
-      40%{-moz-transform:rotate(-144deg) scale(1,1)}
-      70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}
-      100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}
+  
+   // @keyframes spin{
+   //    0%{transform:rotate(0) }
+   //    100%{transform:rotate(-360deg)}
+   // }
+
+   @keyframes spin {
+      0% {
+          transform: rotate(0) scale(1.3, 1.3);
       }
-   @-webkit-keyframes spin{
-      0%{-webkit-transform:rotate(0) scale(1.5,1.5)}
-      25%{-webkit-transform:rotate(-90deg) scale(0,0)}
-      40%{-webkit-transform:rotate(-144deg) scale(1,1)}
-      70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}
-      100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}
-   }
-   @keyframes spin{
-      0%{transform:rotate(0) scale(1,1)}
-      20%{transform:rotate(-82deg) scale(1,1)}
-      40%{transform:rotate(-144deg) scale(1,1)}
-      70%{transform:rotate(-252deg) scale(1,1)}
-      100%{transform:rotate(-360deg) scale(1,1)}
-   }
+      22.6% {
+          transform: rotate(-81.36deg) scale(2.87,2.87);
+      }
+      23% {
+          transform: rotate(-82.8deg) scale(2.9, 2.9);
+      }
+      23.4% {
+          transform: rotate(-84.24deg) scale(2.86,2.86);
+      }
+      31% {
+          transform: rotate(-111.6deg) scale(2.4, 2.4);
+      }
+      64% {
+          transform: rotate(-230.4deg) scale(0.3, 0.3);
+      }
+      65% {
+          transform: rotate(-264deg) scale(0.000000001, 0.000000001);
+      }
+      67% {
+          transform: rotate(-221.2deg) scale(0.000000001, 0.000000001);
+      }
+      70% {
+          transform: rotate(-252.2deg) scale(0.3, 0.3);
+      }
+      100% {
+          transform: rotate(-360deg) scale(1.3, 1.3);
+      }
+  }
    @-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}`;
    var mobile_style = my_style;
    "#emoji-container img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
@@ -245,7 +252,7 @@ function platformStylesAndLogic() {
    } else {
       if (safariCheck == false) {
          document.getElementById("best").innerHTML = "NFT";
-         document.getElementById("title-span").innerHTML = "<em>emojiMandala.net</em>";
+         document.getElementById("title-span").innerHTML = `<div><em>emojiMandala.net</em> <div>Ω</div></div>`;
          var myStyle = document.createElement("link");
          var myStyle = document.createElement("style");
          myStyle.innerHTML = my_style;
@@ -373,7 +380,7 @@ function desktopClient() {
    }, 20000);
    fadeSlow.className += " fadeSlow";
    setTimeout(function () {
-      fadeSlow.style.display = "none";
+      fadeSlow.style.zIndex = -10;
       forInterval = setInterval(addEmoji, 120);
    }, 1000);
 
