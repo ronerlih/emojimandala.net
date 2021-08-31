@@ -95,37 +95,12 @@ var my_style = `
    // }
 
    @keyframes spin {
-      0% {
-          transform: rotate(0) scale(1.3, 1.3);
-      }
-      22.6% {
-          transform: rotate(-81.36deg) scale(2.87,2.87);
-      }
-      23% {
-          transform: rotate(-82.8deg) scale(2.9, 2.9);
-      }
-      23.4% {
-          transform: rotate(-84.24deg) scale(2.86,2.86);
-      }
-      31% {
-          transform: rotate(-111.6deg) scale(2.4, 2.4);
-      }
-      64% {
-          transform: rotate(-230.4deg) scale(0.3, 0.3);
-      }
-      65% {
-          transform: rotate(-264deg) scale(0.000000001, 0.000000001);
-      }
-      67% {
-          transform: rotate(-221.2deg) scale(0.000000001, 0.000000001);
-      }
-      70% {
-          transform: rotate(-252.2deg) scale(0.3, 0.3);
-      }
-      100% {
-          transform: rotate(-360deg) scale(1.3, 1.3);
-      }
-  }
+      0% { transform: rotate(0deg)  scale(1.5,1.5);}
+     20% { transform: rotate(-72deg) scale(2.9,2.9); }
+     40% { transform: rotate(-144deg) scale(1.4,1.4);;}
+     70% { transform: rotate(-252deg)  scale(0,0);}
+     100% { transform: rotate(-360deg) scale(1.5,1.5); }
+ }
    @-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}`;
    var mobile_style = my_style;
    "#emoji-container img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
@@ -252,7 +227,7 @@ function platformStylesAndLogic() {
    } else {
       if (safariCheck == false) {
          document.getElementById("best").innerHTML = "NFT";
-         document.getElementById("title-span").innerHTML = `<div><em>emojiMandala.net</em> <div>Ω</div></div>`;
+         document.getElementById("title-span").innerHTML = `<div><em>emojiMandala.net</em></div>`;
          var myStyle = document.createElement("link");
          var myStyle = document.createElement("style");
          myStyle.innerHTML = my_style;
