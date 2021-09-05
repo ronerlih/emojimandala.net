@@ -381,11 +381,12 @@ function desktopClient() {
          nicknameEl.classList.add("rotateHue");
 
          nicknameEl.style = `
-         font-size: 16px;
+         font-size: 1em;
          word-spacing: 2px;
-         font-family: font-family: 'Hina Mincho', serif;
+         font-family: georgia;
          color: #c08219;
          left: 75px;
+         font-style: italic;
          top: 35px;
          width: 160px;
          position: absolute;
