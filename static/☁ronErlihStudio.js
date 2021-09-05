@@ -6,7 +6,7 @@ let nfts = {
       creator: {},
       top_ownerships: [],
       image_url: "",
-      emoji_nickname: "root-emoji",
+      emoji_nickname: "OmniMoji",
       link: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425",
    },
 };
@@ -60,6 +60,19 @@ var my_style = `
       -webkit-animation:fadeOutSlow 1s 1 linear forwards;
       animation:fadeOutSlow 1s 1 linear forwards}
    img{opacity:.8 }
+   #top-links {
+      position: fixed;
+      display: inline-block;
+      opacity: 1;
+      z-index: 1100;
+      left: 5px;
+      top: 5px;
+      padding:5px;
+      color: cornflowerblue;
+      line-height: 20px;
+      
+   }
+   #top-links  a {text-decoration: revert;}
    #emojiListDiv {
       z-index:1000;
       position:absolute;
@@ -363,18 +376,34 @@ function desktopClient() {
       if (nfts[i]) {
          const nicknameContainer = document.createElement("div");
          nicknameContainer.style.position = "relative";
+         nicknameContainer.style.zIndex = "30";
          const nicknameEl = document.createElement("div");
-         nicknameEl.style.position = "absolute";
-         nicknameEl.style.left = "-70px";
-         nicknameEl.style.top = "50px";
-         nicknameEl.style.width = "160px";
+         nicknameEl.classList.add("rotateHue");
 
+         nicknameEl.style = `
+         font-size: 16px;
+         word-spacing: 2px;
+         font-family: font-family: 'Hina Mincho', serif;
+         color: #c08219;
+         left: 75px;
+         top: 35px;
+         width: 160px;
+         position: absolute;
+         -webkit-text-stroke: 0.5px beige;
+         text-stroke: 0.5px beige;
+
+`
          // creator, description,top_ownerships, image_url
 
-         nicknameEl.textContent = nfts[i].traits[3].trait_type;
-         nicknameContainer.appendChild(nicknameEl);
+         const nicknameText = nfts[i].traits[3].trait_type;
+         if (nicknameText) {
+            nicknameEl.textContent = nicknameText
+            nicknameContainer.classList.add("nft-emoji");
+            nicknameContainer.appendChild(nicknameEl);
+            spriteImages[i].classList.add("rotateHue");
+
+         }
          spriteImages[i].style.width = "72px";
-         spriteImages[i].classList.add("rotateHue");
          nicknameContainer.appendChild(spriteImages[i]);
          spriteImages[i] = nicknameContainer;
       }
@@ -408,7 +437,7 @@ function desktopClient() {
          "height: " +
          emojiSize +
          "px!important;" +
-         "z-index: 10000;" +
+         `z-index: ${nfts[i] ? '200!important;' : '200;'}` +
          "border: 0;" +
          "height: auto; display:block;visibility:visible;";
 
