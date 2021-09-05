@@ -1,665 +1,1807 @@
-
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" 
-      xmlns:fb="https://www.facebook.com/2008/fbml">
-<head>
-
- 
-<meta name="theme-color" content="#ffffff">
-<meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<title>emojiMandala ☁ ron Erlih Studio</title>
-
-<meta name="twitter:card" content="summary" />
-<meta property="og:description" content="cutting edge in human communication - emojis ☁ ron erlih studio" />
-<meta property="og:title" content="emojiMandala ☁ ron Erlih Studio" />
-<meta property="og:url" content="https://emojimandala.net/" />
-<meta property="fb:app_id" content="190832721382979" />
-<meta property="og:image" itemprop="image" content="https://s3-us-west-2.amazonaws.com/emojimandala.net/static/img/squinting_smilie_1024.gif" />
-
-<script
-  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-  crossorigin="anonymous"></script>
-<!--<link rel="manifest" href="static/img/manifest.json">-->
-<link rel="stylesheet" type="text/css" href="static/css/emojipedia.5146e661821a.css">
-
-<!--<link rel="mask-icon" mask href="static/img/emojipedia.svg " color="black">-->
-<meta name="description" content="the emojiMandala is created from the emojis page at emojipedia.org ☁ ron erlih studio">
-<link rel="icon" href="https://s3-us-west-2.amazonaws.com/emojimandala.net/favicon.ico?v=2" />
-
-<style>
-#studioCredit{
-display:none;color:#2458a1; position:absolute; font-family:georgia; left:5px; bottom: 8px; font-size:0.8em;
-line-height:0.5;z-index: 1000;}
-body{overflow-x: hidden;}
-#mobilePrompt{
-padding:10px;
-display:none;
-text-align:center;
-color:cornflowerblue;
-font-family:georgia;
-}
-#landing{font-family:georgia;position: fixed;left:0px;top:0px; width:100vw;height:100vh; text-align: center;z-index: 100; background: white}
-#safariDesktop{font-family:georgia;position: fixed;left:0px;top:0px; width:100vw;height:100vh; text-align: center;z-index: 101; background: white; }
-#loadingSpan, #bestOnSpan, #creditSpan{position: relative; color: cornflowerblue;}
-#loadingSpan{top:1%;}
-#bestOnSpan{display:none;top:2%;}
-#loadingSpan{display:none;top:13%; }
-#creditSpan{display:none;top:30%;color: cornflowerblue;}
-#creditSpan a:visited,link{color: cornflowerblue;}
-#creditSpanSafari{color: cornflowerblue;}
-#creditSpanSafari a:visited,link{color: cornflowerblue;}
-#progress{margin-left:auto;margin-right:auto;width:200px;background-color:#AAAAAA;}
-#bar{height: 5px;width: 1%;background-color: cornflowerblue; -webkit-transition: width 0.6s; /* Safari */
-   -moz-transition: width 0.6s; -o-transition: width 0.6s;transition: width 0.6s; transition-timing-function: ease-in-out;}
-#span{padding-top: 5px;}
-#title-span{font-family: georgia; text-align: center;margin-right: auto;margin-left: auto; color: cornflowerblue;font-size: 1em;margin-top:62vh;}
-#spanContainter{position: absolute;left:0;top:0;width:100vw;height: 100vh; z-index: 1; background: white;}
-#nft {
-   border: 2px;
-   padding: 10px;
-   position: absolute; 
-   font-size: 1rem;
-   left:0px;
-   top:90vh;
-}
-#nft > ul {
-   list-style-type : none;
-}
-#nft li {
-   padding: 5px;
-   border: 1px solid black;
-   border-radius: 10px;;
-   margin:2px;
-   display: flex;
-   align-items: center;
-   flex-wrap: wrap;
-   word-break: keep-all;
-   margin-top:10px;
-}
-.nft-icon {
-   flex: 30px 0 0;
-}
-.nft-title  {
-   flex:1.5;
-}
-
-.nft-owner {
-   flex:1
-}
-.nft-link {
-}
-#nft li img {
-    width: 30px;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-#nft li * {
-   margin: 5px;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  text-align: center;
-  border-radius: 10px;
-  background: white;
-  padding: 15px;
-  display: inline-block;
-  width: 360px;
-  line-height: 30px;
-  vertical-align: baseline;
-  text-align: left;
-  margin-left: 10px;
-  border: 2px solid;
-   font-weight: 200;
-   font-size: 18px;
-   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-.spriteMobile{clip: rect(2px,70px,70px,2px);}
-.cloudLogo{opacity:1;
-  -webkit-transform: translate(0px,4px);
-  -moz-transform:    translate(0px,4px);
-  -ms-transform:     translate(0px,4px);
-  -o-transform:      translate(0px,4px);
-  transform:         translate(0px,4px);
-  padding:0;}
-  ul.emoji-grid img{margin:-1px!important;position:relative; }
-  ul.emoji-grid li{width:70px!important;overflow: hidden!important;
-      height:70px!important;
-      overflow:hidden;}
-      ul.emoji-grid a{width:70px!important;overflow: hidden!important;
-      height:70px!important;
-      overflow:hidden;}
-      header{background: white;}
-      #spanContainter {}
-      .container.main-emojipedia {background: white;margin:0px; width:100%; padding: 3% 20% 0 20%} 
-      .main-emojipedia{
-         position: relative;
-         z-index: 2;
-         
-      }
-      .rotateHue {
-   animation: rotateHue 100s infinite;
-}
-@keyframes rotateHue {
-   0% {
-      filter: hue-rotate(0deg);
-   }
-   100% {
-      filter: hue-rotate(360deg);
-   }
-}
-
-</style>
-
-</head>
-<body>
-   
-       
-<div id="landing">
-	<div id="bestOnSpan">
-		<h2 style="margin-bottom: 0">
-		emojiMandala.net
-		</h2>
-		<span id ="best">
-		</span>
-	</div>
-	<div id="loadingSpan">
-		<h4 style="padding:10px;">
-    ..Loading   
-    <br>  
-		</h4>
-    <div id="progress">
-			<div id="bar"></div>
-		</div>
-		<div id="span"></div>
-	</div>
-	
-	<div id="creditSpan">
-		<a  href="http://ronErlihStudio.com" target="_blank">
-			<img onload="document.getElementById('landing').style.display = 'block'; " id="cloud" width="50" height="auto" src="static/img/loading_cloud_only.gif"/>
-			<h3>
-			ronErlihStudio 
-			</h3>
-		</a>
-	</div>
-</div>
-
-   <div id="emojiListDiv">
-   </div>
-<div id="spanContainter">
-   <div id="nft">
-      <h3 class="tooltip">Thank you!<span class="tooltiptext"> <font style="font-size:40px;vertical-align: text-bottom;">🤯 </font>When you purchase an NTF from the <a href="https://opensea.io/collection/emoji-mandala" alt="emojimandala collection at opense.io">collection</a> you can set it's nickname!</span>
-      </h3>
-      <ul class="collection" >
- 
-
-       </ul>
-   </div>    <div id="title-span"><em>emojiMandala.net</em><br>NFTs</div></div>
-<img id="mute" onclick="Unmute();" style="left:calc(100% - 32px);top:5px;position:absolute; width:30px; z-index:100; display:none;" src="static/img/mute.png">
-<img id="unmute" onclick="Mute();" style="position:absolute;left:calc(100% - 32px);top:5px; display:none; width:30px; z-index:100;" src="static/img/unmute.png">
-<audio id="audio" loop controls style="width:0px; height:0px; position:absolute;">
-  <source src="om.mp3" type="audio/mpeg" >
-Your browser does not support the audio element.
-</audio>
-
-<div id="studioCredit">(emojis from emojipedia.org)<br>
-	<a href="http://ronErlihStudio.com" target="_blank">
-	<img class="cloudLogo" src="static/img/cloud32.png" width="16">
-	 ronErlihStudio.com</a>
-</div>
-
-<header class="main-emojipedia" >
-    <div class="container" >
-        <form method="get" action="/search/" class="search-form">      
-          <input id="id_q" name="q" placeholder="Search Emojipedia.com" type="search"/>
-        </form>
-        <a href="#nav-categories" id="nav-categories-toggle">
-            Categories
-        </a>
-        <nav class="categories">
-            <ul id="nav-categories">
-                <li>
-                    <a href="/people/">
-                        <span class="emoji">
-                            😃
-                        </span>
-                        Smileys & People
-                    </a>
-                </li>
-                <li><a href="/nature/"><span class="emoji">🐻</span> Animals & Nature</a></li><li><a href="/food-drink/"><span class="emoji">🍔</span> Food & Drink</a></li><li><a href="/activity/"><span class="emoji">⚽</span> Activity</a></li><li><a href="/travel-places/"><span class="emoji">🌇</span> Travel & Places</a></li><li><a href="/objects/"><span class="emoji">💡</span> Objects</a></li><li><a href="/symbols/"><span class="emoji">🔣</span> Symbols</a></li><li><a href="/flags/"><span class="emoji">🎌</span> Flags</a></li></ul>
-        </nav>
-    </div>
-</header>
-
-<div class="sponsor main-emojipedia"><p><a href="https://emojiwrap.com/"><span class="emoji">🤓</span>&nbsp;Emoji news delivered to your 📥 inbox.&nbsp;📝 Sign up here, it&#39;s free.</a></p>
-</div>
-
-<div class="container main-emojipedia"><div class="content">
-
-<article id="hook" class="main-emojipedia">
-
-<ul class="emoji-grid main-emojipedia" >
-   <li><a href="/apple/ios-10.2/couple-with-heart-woman-man/">
-   <img bkp="f0/f4/f0f48c32deff7f8cfd4b69b70ce4db6e.png" id="emoji_00" class="parserEmoji" src="static/img/transparent.png" alt=
-      "Couple With Heart (Woman, Man)" title="Couple With Heart (Woman, Man)" width="72"
-      height="72" />
-   </a></li>
-
-      <li><a href="/apple/ios-10.2/kiss-woman-man/"><img bkp=
-      "7f/2f/7f2f093efb8143883b1aac96641874b7" id="emoji_01"
-      class="parserEmoji" src="static/img/transparent.png" alt="Kiss (Woman, Man)" title="Kiss (Woman, Man)" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/grinning-face/"><img bkp=
-      "71/89/7189d9a20f4c87f3a3240e321837e4b8" id="emoji_02"
-      class="parserEmoji" src="static/img/transparent.png" alt="Grinning Face" title="Grinning Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/grinning-face-with-smiling-eyes/"><img bkp=
-      "9a/45/9a45aa497c27561522a5833971840e17" id="emoji_03"
-      class="parserEmoji" src="static/img/transparent.png" alt="Grinning Face With Smiling Eyes" title="Grinning Face With Smiling Eyes"
-      width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-tears-of-joy/"><img bkp=
-      "70/63/70639a57bb3b30a8468cb0c571826db9" id="emoji_04"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Tears of Joy" title="Face With Tears of Joy" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/rolling-on-the-floor-laughing/"><img bkp=
-      "32/fa/32fa2436b50c5701c19dd261ef2cd550" id="emoji_05"
-      class="parserEmoji" src="static/img/transparent.png" alt="Rolling On The Floor Laughing" title="Rolling On The Floor Laughing" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-open-mouth/"><img bkp=
-      "a6/75/a67548cadbb77d31954c0e4b5eab0ef8" id="emoji_06"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Open Mouth" title="Smiling Face With Open Mouth" width="72"
-      height="72" /></a></li>
-
-      <li><a href=
-      "/apple/ios-10.2/smiling-face-with-open-mouth-and-smiling-eyes/"><img bkp=
-      "11/00/11007dbce4ff8f52e8a983e586f6f423" id="emoji_07"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Open Mouth and Smiling Eyes" title=
-      "Smiling Face With Open Mouth and Smiling Eyes" width="72" height="72" /></a></li>
-
-      <li><a href=
-      "/apple/ios-10.2/smiling-face-with-open-mouth-and-cold-sweat/"><img bkp="0e/ee/0eeef7124a4cc644f40be4acf20402a3"
-      id="emoji_08"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Open Mouth and Cold Sweat" title=
-      "Smiling Face With Open Mouth and Cold Sweat" width="72" height="72" /></a></li>
-
-      <li><a href=
-      "/apple/ios-10.2/smiling-face-with-open-mouth-and-tightly-closed-eyes/"><img bkp=
-      "2e/c6/2ec6f81e399bdfe3161c300cf35ae49b" id="emoji_09"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Open Mouth and Tightly-Closed Eyes" title=
-      "Smiling Face With Open Mouth and Tightly-Closed Eyes" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/winking-face/"><img bkp=
-      "6d/d0/6dd0b7da93480fff19c3710bcb5d73b8" id="emoji_010"
-      class="parserEmoji" src="static/img/transparent.png" alt="Winking Face" title="Winking Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-smiling-eyes/"><img bkp=
-      "82/39/8239513b1c09c785f6a14e7acd64d71c" id="emoji_011"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Smiling Eyes" title="Smiling Face With Smiling Eyes" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-savouring-delicious-food/"><img bkp=
-      "20/4e/204e005ffe0b198c660f1af3ce4cb404" id="emoji_012"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face Savouring Delicious Food" title="Face Savouring Delicious Food" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-sunglasses/"><img bkp=
-      "ea/37/ea37e5da37258aaacc231a4ee6d2c04d" id="emoji_013"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Sunglasses" title="Smiling Face With Sunglasses" width="72"
-      height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-heart-shaped-eyes/"><img bkp=
-      "72/2b/722b7f3257e2c81e840819ee7f8f707d" id="emoji_014"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Heart-Shaped Eyes" title=
-      "Smiling Face With Heart-Shaped Eyes" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-throwing-a-kiss/"><img bkp=
-      "d4/d8/d4d8fab3593f7ecfa7d4ef7ccd661f84" id="emoji_015"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face Throwing a Kiss" title="Face Throwing a Kiss" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/kissing-face/"><img bkp=
-      "6f/26/6f268c0840ec5b528c610c5d2bc2c4fc" id="emoji_016"
-      class="parserEmoji" src="static/img/transparent.png" alt="Kissing Face" title="Kissing Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/kissing-face-with-smiling-eyes/"><img bkp=
-      "e6/d6/e6d64a5cb7d166c541ca5fd359b1c0f2" id="emoji_017"
-      class="parserEmoji" src="static/img/transparent.png" alt="Kissing Face With Smiling Eyes" title="Kissing Face With Smiling Eyes" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/kissing-face-with-closed-eyes/"><img bkp=
-      "86/2e/862ea97e3f39e4ea0d74dc70eacf316c" id="emoji_018"
-      class="parserEmoji" src="static/img/transparent.png" alt="Kissing Face With Closed Eyes" title="Kissing Face With Closed Eyes" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/white-smiling-face/"><img bkp=
-      "44/02/44023c88f9dee32df560b675a3fbd2e2" id="emoji_019"
-      class="parserEmoji" src="static/img/transparent.png" alt="White Smiling Face" title="White Smiling Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/slightly-smiling-face/"><img bkp=
-      "96/08/9608737df07c206bcc9a0df0a134ca9f" id="emoji_020"
-      class="parserEmoji" src="static/img/transparent.png" alt="Slightly Smiling Face" title="Slightly Smiling Face" width="72" height=
-      "72" /></a></li>
-
-      <li id="more"><a href="/apple/ios-10.2/hugging-face/"><img bkp=
-      "c6/8b/c68b68d83ff69b82fbd41efdaf8323dd" id="emoji_021"
-      class="parserEmoji" src="static/img/transparent.png" alt="Hugging Face" title="Hugging Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/thinking-face/"><img bkp=
-      "b2/ac/b2ac57907db3f5036cb7e9c760a17db0" id="emoji_021"
-      class="parserEmoji" src="static/img/transparent.png" alt="Thinking Face" title="Thinking Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/neutral-face/"><img bkp=
-      "28/59/2859b5eb984e9fe3546b63dd32c399ba" id="emoji_022"
-      class="parserEmoji" src="static/img/transparent.png" alt="Neutral Face" title="Neutral Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/expressionless-face/"><img bkp=
-      "d3/2d/d32dea0b9e3681fa1b884088e90be233" id="emoji_023"
-      class="parserEmoji" src="static/img/transparent.png" alt="Expressionless Face" title="Expressionless Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-without-mouth/"><img bkp=
-      "6f/92/6f920ed30a9d80a86604cb55544d91e4" id="emoji_024"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face Without Mouth" title="Face Without Mouth" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-rolling-eyes/"><img bkp=
-      "de/6e/de6e2a291cff05da9990d1bafe4a0a48" id="emoji_025"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Rolling Eyes" title="Face With Rolling Eyes" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smirking-face/"><img bkp=
-      "2d/bc/2dbcaa046c598340d4fa035e5f561d08" id="emoji_026"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smirking Face" title="Smirking Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/persevering-face/"><img bkp=
-      "cb/f4/cbf4856b508ecc220067e998787940cc" id="emoji_027"
-      class="parserEmoji" src="static/img/transparent.png" alt="Persevering Face" title="Persevering Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/disappointed-but-relieved-face/"><img bkp=
-      "8a/98/8a98c4b57d0560588569b4aaa10719ee" id="emoji_028"
-      class="parserEmoji" src="static/img/transparent.png" alt="Disappointed but Relieved Face" title="Disappointed but Relieved Face" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-open-mouth/"><img bkp=
-      "f8/e3/f8e3f7867645c5fb1ab1ecd55964d617" id="emoji_029"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Open Mouth" title="Face With Open Mouth" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/zipper-mouth-face/"><img bkp=
-      "34/d2/34d2fece61eca4f6507ae4f317ea9bc4" id="emoji_030"
-      class="parserEmoji" src="static/img/transparent.png" alt="Zipper-Mouth Face" title="Zipper-Mouth Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/hushed-face/"><img bkp=
-      "f7/f8/f7f8df7d8f0c1f6f7085d983c6011b98" id="emoji_031"
-      class="parserEmoji" src="static/img/transparent.png" alt="Hushed Face" title="Hushed Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/sleepy-face/"><img bkp=
-      "4c/30/4c306f2739c55c152db1dfb02891e9ca" id="emoji_031"
-      class="parserEmoji" src="static/img/transparent.png" alt="Sleepy Face" title="Sleepy Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/tired-face/"><img bkp=
-      "59/bf/59bf61148bac7f45ea2b9aff15821ff9" id="emoji_031"
-      class="parserEmoji" src="static/img/transparent.png" alt="Tired Face" title="Tired Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/sleeping-face/"><img bkp=
-      "31/65/3165b777ea752dd7981156aa84eb95b1" id="emoji_032"
-      class="parserEmoji" src="static/img/transparent.png" alt="Sleeping Face" title="Sleeping Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/relieved-face/"><img bkp=
-      "ae/ba/aeba61ffd436a8fbe6ebabd25b99cf0a" id="emoji_033"
-      class="parserEmoji" src="static/img/transparent.png" alt="Relieved Face" title="Relieved Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/nerd-face/"><img bkp=
-      "f8/48/f84855c3ac791eb3f06b6437dee646ae" id="emoji_034"
-      class="parserEmoji" src="static/img/transparent.png" alt="Nerd Face" title="Nerd Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-stuck-out-tongue/"><img bkp=
-      "93/3a/933a0656ad5885a7f3a83148215e9212" id="emoji_035"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Stuck-Out Tongue" title="Face With Stuck-Out Tongue" width="72"
-      height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-stuck-out-tongue-and-winking-eye/"><img bkp=
-      "ed/4a/ed4a3e824a8d5098bdc3d266d11b73ea" id="emoji_036"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Stuck-Out Tongue and Winking Eye" title=
-      "Face With Stuck-Out Tongue and Winking Eye" width="72" height="72" /></a></li>
-
-      <li><a href=
-      "/apple/ios-10.2/face-with-stuck-out-tongue-and-tightly-closed-eyes/"><img bkp=
-      "a0/79/a079ec0855d233f0553ee5331975a16d" id="emoji_037"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Stuck-Out Tongue and Tightly-Closed Eyes" title=
-      "Face With Stuck-Out Tongue and Tightly-Closed Eyes" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/drooling-face/"><img bkp=
-      "25/58/2558fdca4e64d5cd84ffa25f67939b7f" id="emoji_038"
-      class="parserEmoji" src="static/img/transparent.png" alt="Drooling Face" title="Drooling Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/unamused-face/"><img bkp=
-      "bb/57/bb573881b722066c250386ef975cd36d" id="emoji_039"
-      class="parserEmoji" src="static/img/transparent.png" alt="Unamused Face" title="Unamused Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-cold-sweat/"><img bkp=
-      "27/f1/27f1c9fc07ea4d97d0f0e35d1562f5c6" id="emoji_040"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Cold Sweat" title="Face With Cold Sweat" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/pensive-face/"><img bkp=
-      "96/48/96484aa7b56ab04d972a3e2459b70c3d" id="emoji_041"
-      class="parserEmoji" src="static/img/transparent.png" alt="Pensive Face" title="Pensive Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/confused-face/"><img bkp=
-      "c1/a4/c1a4d704c0b0aafc2a3fb2bd45d1d75b" id="emoji_042"
-      class="parserEmoji" src="static/img/transparent.png" alt="Confused Face" title="Confused Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/upside-down-face/"><img bkp=
-      "f2/ba/f2ba5a2517d66d91ff75cb5d0eaf6a80" id="emoji_043"
-      class="parserEmoji" src="static/img/transparent.png" alt="Upside-Down Face" title="Upside-Down Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/money-mouth-face/"><img bkp=
-      "31/5a/315a97d263f2868f5f20a6a0919a1360" id="emoji_044"
-      class="parserEmoji" src="static/img/transparent.png" alt="Money-Mouth Face" title="Money-Mouth Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/astonished-face/"><img bkp=
-      "86/60/8660a87a3f7e3f5a1f63669c6ee78cac" id="emoji_045"
-      class="parserEmoji" src="static/img/transparent.png" alt="Astonished Face" title="Astonished Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/white-frowning-face/"><img bkp=
-      "a0/fb/a0fbc5a19da3a9f628bd5f61fd844bb1" id="emoji_046"
-      class="parserEmoji" src="static/img/transparent.png" alt="White Frowning Face" title="White Frowning Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/slightly-frowning-face/"><img bkp=
-      "4d/35/4d35f1afe4d8bb702df4c9aca7d31afd" id="emoji_047"
-      class="parserEmoji" src="static/img/transparent.png" alt="Slightly Frowning Face" title="Slightly Frowning Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/confounded-face/"><img bkp=
-      "88/4e/884efe4941a90cebabb79d15251cf09b" id="emoji_048"
-      class="parserEmoji" src="static/img/transparent.png" alt="Confounded Face" title="Confounded Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/disappointed-face/"><img bkp=
-      "02/a7/02a7271ff040c88f5ecf52fc50c81491" id="emoji_049"
-      class="parserEmoji" src="static/img/transparent.png" alt="Disappointed Face" title="Disappointed Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/worried-face/"><img bkp=
-      "ae/be/aebe825a3d0e11cd7febcf8c7d9dda46" id="emoji_050"
-      class="parserEmoji" src="static/img/transparent.png" alt="Worried Face" title="Worried Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-look-of-triumph/"><img bkp=
-      "17/eb/17ebb8f13d0ba6bb32ead7c6e06b16cb" id="emoji_051"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Look of Triumph" title="Face With Look of Triumph" width="72"
-      height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/crying-face/"><img bkp=
-      "72/5e/725e667658feb01e98f7e668930e185b" id="emoji_052"
-      class="parserEmoji" src="static/img/transparent.png" alt="Crying Face" title="Crying Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/loudly-crying-face/"><img bkp=
-      "41/a2/41a20d8f6563e2a961877ea50cb51ae2" id="emoji_053"
-      class="parserEmoji" src="static/img/transparent.png" alt="Loudly Crying Face" title="Loudly Crying Face" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/frowning-face-with-open-mouth/"><img bkp=
-      "f7/2d/f72d1e743213b65888f0bcb5a41e9182" id="emoji_054"
-      class="parserEmoji" src="static/img/transparent.png" alt="Frowning Face With Open Mouth" title="Frowning Face With Open Mouth" width=
-      "72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/anguished-face/"><img bkp=
-      "8f/2b/8f2bcc983f550dd056e064f0dba0c9d6" id="emoji_055"
-      class="parserEmoji" src="static/img/transparent.png" alt="Anguished Face" title="Anguished Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/fearful-face/"><img bkp=
-      "a3/44/a3440a7e67241cad6c69c9caf92e9648" id="emoji_056"
-      class="parserEmoji" src="static/img/transparent.png" alt="Fearful Face" title="Fearful Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/weary-face/"><img bkp=
-      "72/04/72048efbac366efa33a571955592ba1a" id="emoji_057"
-      class="parserEmoji" src="static/img/transparent.png" alt="Weary Face" title="Weary Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/grimacing-face/"><img bkp=
-      "69/a2/69a266a65eb7df6ac9ed1711e49b6d62" id="emoji_058"
-      class="parserEmoji" src="static/img/transparent.png" alt="Grimacing Face" title="Grimacing Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-open-mouth-and-cold-sweat/"><img bkp=
-      "02/94/0294fa583dae66697279cd928bc57de5" id="emoji_059"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Open Mouth and Cold Sweat" title=
-      "Face With Open Mouth and Cold Sweat" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-screaming-in-fear/"><img bkp=
-      "8a/c6/8ac63a7b6a5298287aa3a9f7afee3820" id="emoji_060"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face Screaming in Fear" title="Face Screaming in Fear" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/flushed-face/"><img bkp=
-      "3c/fc/3cfca4c5048232450764d36e254114fe" id="emoji_061"
-      class="parserEmoji" src="static/img/transparent.png" alt="Flushed Face" title="Flushed Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/dizzy-face/"><img bkp=
-      "81/ff/81ffc3aab590d576ca7b27cf431f7b67" id="emoji_062"
-      class="parserEmoji" src="static/img/transparent.png" alt="Dizzy Face" title="Dizzy Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/pouting-face/"><img bkp=
-      "af/0f/af0f5a22742b3a987306b714392cd822" id="emoji_063"
-      class="parserEmoji" src="static/img/transparent.png" alt="Pouting Face" title="Pouting Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/angry-face/"><img bkp=
-      "53/43/5343bb36afec07a7dd72c238da433919" id="emoji_064"
-      class="parserEmoji" src="static/img/transparent.png" alt="Angry Face" title="Angry Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-halo/"><img bkp=
-      "e3/e0/e3e03d5a3092be979f60f558c1d84f09" id="emoji_065"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Halo" title="Smiling Face With Halo" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-cowboy-hat/"><img bkp=
-      "23/51/235182491fb84779403550075e4d02b4" id="emoji_066"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Cowboy Hat" title="Face With Cowboy Hat" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/clown-face/"><img bkp=
-      "f1/d0/f1d0d3c3658dc3a3271f8e185bf22352" id="emoji_067"
-      class="parserEmoji" src="static/img/transparent.png" alt="Clown Face" title="Clown Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/lying-face/"><img bkp=
-      "74/63/7463369f616d5e39d29e42051c989cc6" id="emoji_068"
-      class="parserEmoji" src="static/img/transparent.png" alt="Lying Face" title="Lying Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-medical-mask/"><img bkp=
-      "bb/b6/bbb6d49bea60dfd654cda96065a6d628" id="emoji_069"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Medical Mask" title="Face With Medical Mask" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-thermometer/"><img bkp=
-      "9e/aa/9eaa79f29c75b8e9558d4e236f90589e" id="emoji_070"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Thermometer" title="Face With Thermometer" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/face-with-head-bandage/"><img bkp=
-      "46/a5/46a5c41ec07e96f975f4f0633407b443" id="emoji_071"
-      class="parserEmoji" src="static/img/transparent.png" alt="Face With Head-Bandage" title="Face With Head-Bandage" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/nauseated-face/"><img bkp=
-      "b9/4b/b94b15eaf6039bc7f82428f8d5333d20" id="emoji_072"
-      class="parserEmoji" src="static/img/transparent.png" alt="Nauseated Face" title="Nauseated Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/sneezing-face/"><img bkp=
-      "10/2b/102b062e9285f76e21d69dea0fb225e5" id="emoji_073"
-      class="parserEmoji" src="static/img/transparent.png" alt="Sneezing Face" title="Sneezing Face" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/smiling-face-with-horns/"><img bkp=
-      "dd/60/dd60607ad67eb05ab6bf0476df20709b" id="emoji_074"
-      class="parserEmoji" src="static/img/transparent.png" alt="Smiling Face With Horns" title="Smiling Face With Horns" width="72" height=
-      "72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/imp/"><img bkp=
-      "25/32/2532144dd8952a9a6d097aff00c6514a" id="emoji_075"
-      class="parserEmoji" src="static/img/transparent.png" alt="Imp" title="Imp" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/japanese-ogre/"><img bkp=
-      "d9/14/d914536d666f7d3ca9a64b8e9faaaa4f" id="emoji_076"
-      class="parserEmoji" src="static/img/transparent.png" alt="Japanese Ogre" title="Japanese Ogre" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/japanese-goblin/"><img bkp=
-      "62/e1/62e189ebe161b75269c68453a1cea59b" id="emoji_077"
-      class="parserEmoji" src="static/img/transparent.png" alt="Japanese Goblin" title="Japanese Goblin" width="72" height="72" /></a></li>
-
-      <li><a href="/apple/ios-10.2/skull/"><img id="lastBodyEmoji" bkp=
-      "ac/4a/ac4a46a67bc262e8e0a2dab7601603bf.png" class="parserEmoji" src="static/img/transparent.png" alt="Skull" title="Skull" width="72"
-      height="72" /></a></li>
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+   <head>
+      <meta name="theme-color" content="#ffffff" />
+      <meta charset="utf-8" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <title>emojiMandala ☁ ron Erlih Studio</title>
+
+      <meta name="twitter:card" content="summary" />
+      <meta property="og:description" content="cutting edge in human communication - emojis ☁ ron erlih studio" />
+      <meta property="og:title" content="emojiMandala ☁ ron Erlih Studio" />
+      <meta property="og:url" content="https://emojimandala.net/" />
+      <meta property="fb:app_id" content="190832721382979" />
+      <meta property="og:image" itemprop="image" content="https://s3-us-west-2.amazonaws.com/emojimandala.net/static/img/squinting_smilie_1024.gif" />
+
+      <script
+         src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+         integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+         crossorigin="anonymous"
+      ></script>
+      <!--<link rel="manifest" href="static/img/manifest.json">-->
+      <link rel="stylesheet" type="text/css" href="static/css/emojipedia.5146e661821a.css" />
+
+      <!--<link rel="mask-icon" mask href="static/img/emojipedia.svg " color="black">-->
+      <meta name="description" content="the emojiMandala is created from the emojis page at emojipedia.org ☁ ron erlih studio" />
+      <link rel="icon" href="https://s3-us-west-2.amazonaws.com/emojimandala.net/favicon.ico?v=2" />
+
+      <!-- font  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet" />
+
+      <style>
+         #studioCredit {
+            display: none;
+            color: #2458a1;
+            position: absolute;
+            font-family: georgia;
+            left: 5px;
+            bottom: 8px;
+            font-size: 0.8em;
+            line-height: 0.5;
+            z-index: 1000;
+         }
+         body {
+            overflow-x: hidden;
+         }
+         #mobilePrompt {
+            padding: 10px;
+            display: none;
+            text-align: center;
+            color: cornflowerblue;
+            font-family: georgia;
+         }
+         #landing {
+            font-family: georgia;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            z-index: 100;
+            background: white;
+         }
+         #safariDesktop {
+            font-family: georgia;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            z-index: 101;
+            background: white;
+         }
+         #loadingSpan,
+         #bestOnSpan,
+         #creditSpan {
+            position: relative;
+            color: cornflowerblue;
+         }
+         #loadingSpan {
+            top: 1%;
+         }
+         #bestOnSpan {
+            display: none;
+            top: 2%;
+         }
+         #loadingSpan {
+            display: none;
+            top: 13%;
+         }
+         #creditSpan {
+            display: none;
+            top: 30%;
+            color: cornflowerblue;
+         }
+         #creditSpan a:visited,
+         link {
+            color: cornflowerblue;
+         }
+         #creditSpanSafari {
+            color: cornflowerblue;
+         }
+         #creditSpanSafari a:visited,
+         link {
+            color: cornflowerblue;
+         }
+         #progress {
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            background-color: #aaaaaa;
+         }
+         #bar {
+            height: 5px;
+            width: 1%;
+            background-color: cornflowerblue;
+            -webkit-transition: width 0.6s; /* Safari */
+            -moz-transition: width 0.6s;
+            -o-transition: width 0.6s;
+            transition: width 0.6s;
+            transition-timing-function: ease-in-out;
+         }
+         #span {
+            padding-top: 5px;
+         }
+         #title-span {
+            font-family: georgia;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            color: cornflowerblue;
+            font-size: 1em;
+            margin-top: 62vh;
+         }
+         #spanContainter {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            background: white;
+         }
+         #nft {
+            border: 2px;
+            padding: 10px;
+            position: absolute;
+            font-size: 1rem;
+            left: 0px;
+            top: 90vh;
+         }
+         #nft > ul {
+            list-style-type: none;
+         }
+         #nft li {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            word-break: keep-all;
+            margin-top: 10px;
+         }
+         .nft-icon {
+            flex: 30px 0 0;
+         }
+         .nft-title {
+            flex: 1.5;
+         }
+
+         .nft-owner {
+            flex: 1;
+         }
+         .nft-link {
+         }
+         #nft li img {
+            width: 30px;
+            border-radius: 20px;
+            border: 1px solid black;
+         }
+         #nft li * {
+            margin: 5px;
+         }
+         .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+         }
+
+         .tooltip .tooltiptext {
+            visibility: hidden;
+            text-align: center;
+            border-radius: 10px;
+            background: white;
+            padding: 15px;
+            display: inline-block;
+            width: 360px;
+            line-height: 30px;
+            vertical-align: baseline;
+            text-align: left;
+            margin-left: 10px;
+            border: 2px solid;
+            font-weight: 200;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+         }
+
+         .tooltip:hover .tooltiptext {
+            visibility: visible;
+         }
+         .spriteMobile {
+            clip: rect(2px, 70px, 70px, 2px);
+         }
+         .cloudLogo {
+            opacity: 1;
+            -webkit-transform: translate(0px, 4px);
+            -moz-transform: translate(0px, 4px);
+            -ms-transform: translate(0px, 4px);
+            -o-transform: translate(0px, 4px);
+            transform: translate(0px, 4px);
+            padding: 0;
+         }
+         ul.emoji-grid img {
+            margin: -1px !important;
+            position: relative;
+         }
+         ul.emoji-grid li {
+            width: 70px !important;
+            overflow: hidden !important;
+            height: 70px !important;
+            overflow: hidden;
+         }
+         ul.emoji-grid a {
+            width: 70px !important;
+            overflow: hidden !important;
+            height: 70px !important;
+            overflow: hidden;
+         }
+         header {
+            background: white;
+         }
+         #spanContainter {
+         }
+         .container.main-emojipedia {
+            background: white;
+            margin: 0px;
+            width: 100%;
+            padding: 3% 20% 0 20%;
+         }
+         .main-emojipedia {
+            position: relative;
+            z-index: 2;
+         }
+         .rotateHue {
+            animation: rotateHue 100s infinite;
+         }
+         @keyframes rotateHue {
+            0% {
+               filter: hue-rotate(0deg);
+            }
+            100% {
+               filter: hue-rotate(360deg);
+            }
+         }
+      </style>
+   </head>
+   <body>
       
-      <li><a href="/tips/">Tips</a></li><li><a href="/zero-width-joiner/">Zero Width Joiner</a></li><li><a href="/modifiers/">Modifiers</a></li>
-      </ul>
-      </article>
+      <div id="landing">
+         <div id="bestOnSpan">
+            <h2 style="margin-bottom: 0">emojiMandala.net</h2>
+            <span id="best"> </span>
+         </div>
+         <div id="loadingSpan">
+            <h4 style="padding: 10px">
+               ..Loading
+               <br />
+            </h4>
+            <div id="progress">
+               <div id="bar"></div>
+            </div>
+            <div id="span"></div>
+         </div>
+
+         <div id="creditSpan">
+            <a href="http://ronErlihStudio.com" target="_blank">
+               <img
+                  onload="document.getElementById('landing').style.display = 'block'; "
+                  id="cloud"
+                  width="50"
+                  height="auto"
+                  src="static/img/loading_cloud_only.gif"
+               />
+               <h3>ronErlihStudio</h3>
+            </a>
+         </div>
       </div>
-      
+    
+      <div id="emojiListDiv"></div>
+      <div id="spanContainter">
+         <div id="top-links">
+            <div>
+               <a href="https://opensea.io/collection/emoji-mandala" target="_blank"> ⛵ View the collection on opensea.io</a>
+            </div>
+   
+            <div>
+               <a href="https://nft.emojimandala.net/" target="_blank"> 🤦 About the collection</a>
+            </div>
+         </div>
+         <div id="nft">
+            <h3 class="tooltip">
+               Thank you!<span class="tooltiptext">
+                  <font style="font-size: 40px; vertical-align: text-bottom">🤯 </font>When you purchase an NTF from the
+                  <a href="https://opensea.io/collection/emoji-mandala" alt="emojimandala collection at opense.io">collection</a> you can set it's
+                  nickname!</span
+               >
+            </h3>
+            <ul class="collection"></ul>
+         </div>
+         <div id="title-span"><em>emojiMandala.net</em><br />NFTs</div>
+      </div>
+      <img
+         id="mute"
+         onclick="Unmute();"
+         style="left: calc(100% - 32px); top: 5px; position: absolute; width: 30px; z-index: 100; display: none"
+         src="static/img/mute.png"
+      />
+      <img
+         id="unmute"
+         onclick="Mute();"
+         style="position: absolute; left: calc(100% - 32px); top: 5px; display: none; width: 30px; z-index: 100"
+         src="static/img/unmute.png"
+      />
+      <audio id="audio" loop controls style="width: 0px; height: 0px; position: absolute">
+         <source src="om.mp3" type="audio/mpeg" />
+         Your browser does not support the audio element.
+      </audio>
 
-<div class="sidebar main-emojipedia"> <div class="block"> <h2>Categories</h2> <ul> <li><a href="/people/"><span class="emoji">😃</span> Smileys & People</a></li><li><a href="/nature/"><span class="emoji">🐻</span> Animals & Nature</a></li><li><a href="/food-drink/"><span class="emoji">🍔</span> Food & Drink</a></li><li><a href="/activity/"><span class="emoji">⚽</span> Activity</a></li><li><a href="/travel-places/"><span class="emoji">🌇</span> Travel & Places</a></li><li><a href="/objects/"><span class="emoji">💡</span> Objects</a></li><li><a href="/symbols/"><span class="emoji">🔣</span> Symbols</a></li><li><a href="/flags/"><span class="emoji">🎌</span> Flags</a></li></ul> </div><div class="block"> <h2>Most Popular</h2> <ul> <li><a href="/shrug/"><span class="emoji">🤷</span> Shrug</a></li><li><a href="/face-with-tears-of-joy/"><span class="emoji">😂</span> Face With Tears of Joy</a></li><li><a href="/heavy-black-heart/"><span class="emoji">❤</span> Heavy Black Heart</a></li><li><a href="/christmas-tree/"><span class="emoji">🎄</span> Christmas Tree</a></li><li><a href="/smiling-face-with-heart-shaped-eyes/"><span class="emoji">😍</span> Smiling Face With Heart-Shaped Eyes</a></li><li><a href="/black-heart/"><span class="emoji">🖤</span> Black Heart</a></li><li><a href="/smiling-face-with-smiling-eyes/"><span class="emoji">😊</span> Smiling Face With Smiling Eyes</a></li><li><a href="/fire/"><span class="emoji">🔥</span> Fire</a></li><li><a href="/father-christmas/"><span class="emoji">🎅</span> Father Christmas</a></li></ul> </div><div class="block"> <h2>Latest News</h2><ul><li><a href="https://blog.emojipedia.org/turn-a-question-mark-box-into-an-emoji/"><span class="emoji">�</span> Turn A Question Mark Box Into An Emoji</a></li><li><a href="https://blog.emojipedia.org/how-we-really-use-the-peach/"><span class="emoji">🍑</span> How We Really Use The Peach</a></li><li><a href="https://blog.emojipedia.org/ios-10-2-emoji-changelog/"><span class="emoji">📲</span> iOS 10.2 Emoji Changelog</a></li><li><a href="https://blog.emojipedia.org/emoji-dictator-of-the-world/"><span class="emoji">👤</span> Emoji Dictator of the World</a></li><li><a href="https://blog.emojipedia.org/regional-flag-support-for-unicode-in-2017/"><span class="emoji">🏳</span>&nbsp;Regional Flag Support For Unicode in 2017</a></li><li><a href="https://blog.emojipedia.org/fidel-castros-death-brings-mixed-emotions/"><span class="emoji">🇨🇺</span> Fidel Castro&#39;s Death Brings Mixed Emotions</a></li><li><a href="https://blog.emojipedia.org/happy-thanksgiving/"><span class="emoji">🦃</span> Happy Thanksgiving</a></li><li><a href="https://blog.emojipedia.org/proposals-for-shaka-and-west-coast-hand/"><span class="emoji">🤙</span> Proposals for Shaka and West Coast Hand</a></li></ul> </div><div class="block"> <h2>Events</h2> <ul> <li><a href="/australia-day/"><span class="emoji">🇦🇺</span> Australia Day</a></li><li><a href="/bastille-day/"><span class="emoji">🇫🇷</span> Bastille Day</a></li><li><a href="/birthday/"><span class="emoji">🎂</span> Birthday</a></li><li><a href="/black-friday/"><span class="emoji">🛍</span> Black Friday</a></li><li><a href="/canada-day/"><span class="emoji">🇨🇦</span> Canada Day</a></li><li><a href="/carnaval/"><span class="emoji">🇧🇷</span> Carnaval</a></li><li><a href="/chinese-new-year/"><span class="emoji">🐉</span> Chinese New Year</a></li><li><a href="/christmas/"><span class="emoji">🎅</span> Christmas</a></li><li><a href="/cinco-de-mayo/"><span class="emoji">🇲🇽</span> Cinco de Mayo</a></li><li><a href="/dragon-boat-festival/"><span class="emoji">🇨🇳</span> Dragon Boat Festival</a></li><li><a href="/easter/"><span class="emoji">🐰</span> Easter</a></li><li><a href="/emoji-movie/"><span class="emoji">🎥</span> Emoji Movie</a></li><li><a href="/fall-autumn/"><span class="emoji">🍂</span> Fall / Autumn</a></li><li><a href="/fathers-day/"><span class="emoji">👨</span> Father’s Day</a></li><li><a href="/festivus/"><span class="emoji">💪</span> Festivus</a></li><li><a href="/graduation/"><span class="emoji">🎓</span> Graduation</a></li><li><a href="/guy-fawkes/"><span class="emoji">🔥</span> Guy Fawkes</a></li><li><a href="/halloween/"><span class="emoji">🎃</span> Halloween</a></li><li><a href="/hanukkah/"><span class="emoji">🕎</span> Hanukkah</a></li><li><a href="/holi/"><span class="emoji">🕉</span> Holi</a></li><li><a href="/independence-day/"><span class="emoji">🇺🇸</span> Independence Day</a></li><li><a href="/mothers-day/"><span class="emoji">👩</span> Mother’s Day</a></li><li><a href="/new-years-eve/"><span class="emoji">🎊</span> New Year’s Eve</a></li><li><a href="/olympics/"><span class="emoji">🏊</span> Olympics</a></li><li><a href="/queens-birthday/"><span class="emoji">👑</span> Queen’s Birthday</a></li><li><a href="/ramadan/"><span class="emoji">☪</span> Ramadan</a></li><li><a href="/spring/"><span class="emoji">🌱</span> Spring</a></li><li><a href="/st-patricks-day/"><span class="emoji">☘</span> St Patrick’s Day</a></li><li><a href="/summer/"><span class="emoji">☀</span> Summer</a></li><li><a href="/super-bowl/"><span class="emoji">🏈</span> Super Bowl</a></li><li><a href="/thanksgiving/"><span class="emoji">🦃</span> Thanksgiving</a></li><li><a href="/valentines-day/"><span class="emoji">💘</span> Valentine’s Day</a></li><li><a href="/wedding-marriage/"><span class="emoji">👰</span> Wedding / Marriage</a></li><li><a href="/winter/"><span class="emoji">⛄</span> Winter</a></li><li><a href="/winter-olympics/"><span class="emoji">🎿</span> Winter Olympics</a></li><li><a href="/world-cup/"><span class="emoji">⚽</span> World Cup</a></li><li><a href="/world-emoji-day/"><span class="emoji">🌎</span> World Emoji Day</a></li></ul> </div></div></div>
+      <div id="studioCredit">
+         (emojis from emojipedia.org)<br />
+         <a href="http://ronErlihStudio.com" target="_blank">
+            <img class="cloudLogo" src="static/img/cloud32.png" width="16" />
+            ronErlihStudio.com</a
+         >
+      </div>
 
-  
-<!--
+      <header class="main-emojipedia">
+         <div class="container">
+            <form method="get" action="/search/" class="search-form">
+               <input id="id_q" name="q" placeholder="Search Emojipedia.com" type="search" />
+            </form>
+            <a href="#nav-categories" id="nav-categories-toggle"> Categories </a>
+            <nav class="categories">
+               <ul id="nav-categories">
+                  <li>
+                     <a href="/people/">
+                        <span class="emoji"> 😃 </span>
+                        Smileys & People
+                     </a>
+                  </li>
+                  <li>
+                     <a href="/nature/"><span class="emoji">🐻</span> Animals & Nature</a>
+                  </li>
+                  <li>
+                     <a href="/food-drink/"><span class="emoji">🍔</span> Food & Drink</a>
+                  </li>
+                  <li>
+                     <a href="/activity/"><span class="emoji">⚽</span> Activity</a>
+                  </li>
+                  <li>
+                     <a href="/travel-places/"><span class="emoji">🌇</span> Travel & Places</a>
+                  </li>
+                  <li>
+                     <a href="/objects/"><span class="emoji">💡</span> Objects</a>
+                  </li>
+                  <li>
+                     <a href="/symbols/"><span class="emoji">🔣</span> Symbols</a>
+                  </li>
+                  <li>
+                     <a href="/flags/"><span class="emoji">🎌</span> Flags</a>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+
+      <div class="sponsor main-emojipedia">
+         <p>
+            <a href="https://emojiwrap.com/"
+               ><span class="emoji">🤓</span>&nbsp;Emoji news delivered to your 📥 inbox.&nbsp;📝 Sign up here, it&#39;s free.</a
+            >
+         </p>
+      </div>
+
+      <div class="container main-emojipedia">
+         <div class="content">
+            <article id="hook" class="main-emojipedia">
+               <ul class="emoji-grid main-emojipedia">
+                  <li>
+                     <a href="/apple/ios-10.2/couple-with-heart-woman-man/">
+                        <img
+                           bkp="f0/f4/f0f48c32deff7f8cfd4b69b70ce4db6e.png"
+                           id="emoji_00"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Couple With Heart (Woman, Man)"
+                           title="Couple With Heart (Woman, Man)"
+                           width="72"
+                           height="72"
+                        />
+                     </a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/kiss-woman-man/"
+                        ><img
+                           bkp="7f/2f/7f2f093efb8143883b1aac96641874b7"
+                           id="emoji_01"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Kiss (Woman, Man)"
+                           title="Kiss (Woman, Man)"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/grinning-face/"
+                        ><img
+                           bkp="71/89/7189d9a20f4c87f3a3240e321837e4b8"
+                           id="emoji_02"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Grinning Face"
+                           title="Grinning Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/grinning-face-with-smiling-eyes/"
+                        ><img
+                           bkp="9a/45/9a45aa497c27561522a5833971840e17"
+                           id="emoji_03"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Grinning Face With Smiling Eyes"
+                           title="Grinning Face With Smiling Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-tears-of-joy/"
+                        ><img
+                           bkp="70/63/70639a57bb3b30a8468cb0c571826db9"
+                           id="emoji_04"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Tears of Joy"
+                           title="Face With Tears of Joy"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/rolling-on-the-floor-laughing/"
+                        ><img
+                           bkp="32/fa/32fa2436b50c5701c19dd261ef2cd550"
+                           id="emoji_05"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Rolling On The Floor Laughing"
+                           title="Rolling On The Floor Laughing"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-open-mouth/"
+                        ><img
+                           bkp="a6/75/a67548cadbb77d31954c0e4b5eab0ef8"
+                           id="emoji_06"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Open Mouth"
+                           title="Smiling Face With Open Mouth"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-open-mouth-and-smiling-eyes/"
+                        ><img
+                           bkp="11/00/11007dbce4ff8f52e8a983e586f6f423"
+                           id="emoji_07"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Open Mouth and Smiling Eyes"
+                           title="Smiling Face With Open Mouth and Smiling Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-open-mouth-and-cold-sweat/"
+                        ><img
+                           bkp="0e/ee/0eeef7124a4cc644f40be4acf20402a3"
+                           id="emoji_08"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Open Mouth and Cold Sweat"
+                           title="Smiling Face With Open Mouth and Cold Sweat"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-open-mouth-and-tightly-closed-eyes/"
+                        ><img
+                           bkp="2e/c6/2ec6f81e399bdfe3161c300cf35ae49b"
+                           id="emoji_09"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Open Mouth and Tightly-Closed Eyes"
+                           title="Smiling Face With Open Mouth and Tightly-Closed Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/winking-face/"
+                        ><img
+                           bkp="6d/d0/6dd0b7da93480fff19c3710bcb5d73b8"
+                           id="emoji_010"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Winking Face"
+                           title="Winking Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-smiling-eyes/"
+                        ><img
+                           bkp="82/39/8239513b1c09c785f6a14e7acd64d71c"
+                           id="emoji_011"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Smiling Eyes"
+                           title="Smiling Face With Smiling Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-savouring-delicious-food/"
+                        ><img
+                           bkp="20/4e/204e005ffe0b198c660f1af3ce4cb404"
+                           id="emoji_012"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face Savouring Delicious Food"
+                           title="Face Savouring Delicious Food"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-sunglasses/"
+                        ><img
+                           bkp="ea/37/ea37e5da37258aaacc231a4ee6d2c04d"
+                           id="emoji_013"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Sunglasses"
+                           title="Smiling Face With Sunglasses"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-heart-shaped-eyes/"
+                        ><img
+                           bkp="72/2b/722b7f3257e2c81e840819ee7f8f707d"
+                           id="emoji_014"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Heart-Shaped Eyes"
+                           title="Smiling Face With Heart-Shaped Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-throwing-a-kiss/"
+                        ><img
+                           bkp="d4/d8/d4d8fab3593f7ecfa7d4ef7ccd661f84"
+                           id="emoji_015"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face Throwing a Kiss"
+                           title="Face Throwing a Kiss"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/kissing-face/"
+                        ><img
+                           bkp="6f/26/6f268c0840ec5b528c610c5d2bc2c4fc"
+                           id="emoji_016"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Kissing Face"
+                           title="Kissing Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/kissing-face-with-smiling-eyes/"
+                        ><img
+                           bkp="e6/d6/e6d64a5cb7d166c541ca5fd359b1c0f2"
+                           id="emoji_017"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Kissing Face With Smiling Eyes"
+                           title="Kissing Face With Smiling Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/kissing-face-with-closed-eyes/"
+                        ><img
+                           bkp="86/2e/862ea97e3f39e4ea0d74dc70eacf316c"
+                           id="emoji_018"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Kissing Face With Closed Eyes"
+                           title="Kissing Face With Closed Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/white-smiling-face/"
+                        ><img
+                           bkp="44/02/44023c88f9dee32df560b675a3fbd2e2"
+                           id="emoji_019"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="White Smiling Face"
+                           title="White Smiling Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/slightly-smiling-face/"
+                        ><img
+                           bkp="96/08/9608737df07c206bcc9a0df0a134ca9f"
+                           id="emoji_020"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Slightly Smiling Face"
+                           title="Slightly Smiling Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li id="more">
+                     <a href="/apple/ios-10.2/hugging-face/"
+                        ><img
+                           bkp="c6/8b/c68b68d83ff69b82fbd41efdaf8323dd"
+                           id="emoji_021"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Hugging Face"
+                           title="Hugging Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/thinking-face/"
+                        ><img
+                           bkp="b2/ac/b2ac57907db3f5036cb7e9c760a17db0"
+                           id="emoji_021"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Thinking Face"
+                           title="Thinking Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/neutral-face/"
+                        ><img
+                           bkp="28/59/2859b5eb984e9fe3546b63dd32c399ba"
+                           id="emoji_022"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Neutral Face"
+                           title="Neutral Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/expressionless-face/"
+                        ><img
+                           bkp="d3/2d/d32dea0b9e3681fa1b884088e90be233"
+                           id="emoji_023"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Expressionless Face"
+                           title="Expressionless Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-without-mouth/"
+                        ><img
+                           bkp="6f/92/6f920ed30a9d80a86604cb55544d91e4"
+                           id="emoji_024"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face Without Mouth"
+                           title="Face Without Mouth"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-rolling-eyes/"
+                        ><img
+                           bkp="de/6e/de6e2a291cff05da9990d1bafe4a0a48"
+                           id="emoji_025"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Rolling Eyes"
+                           title="Face With Rolling Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smirking-face/"
+                        ><img
+                           bkp="2d/bc/2dbcaa046c598340d4fa035e5f561d08"
+                           id="emoji_026"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smirking Face"
+                           title="Smirking Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/persevering-face/"
+                        ><img
+                           bkp="cb/f4/cbf4856b508ecc220067e998787940cc"
+                           id="emoji_027"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Persevering Face"
+                           title="Persevering Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/disappointed-but-relieved-face/"
+                        ><img
+                           bkp="8a/98/8a98c4b57d0560588569b4aaa10719ee"
+                           id="emoji_028"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Disappointed but Relieved Face"
+                           title="Disappointed but Relieved Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-open-mouth/"
+                        ><img
+                           bkp="f8/e3/f8e3f7867645c5fb1ab1ecd55964d617"
+                           id="emoji_029"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Open Mouth"
+                           title="Face With Open Mouth"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/zipper-mouth-face/"
+                        ><img
+                           bkp="34/d2/34d2fece61eca4f6507ae4f317ea9bc4"
+                           id="emoji_030"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Zipper-Mouth Face"
+                           title="Zipper-Mouth Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/hushed-face/"
+                        ><img
+                           bkp="f7/f8/f7f8df7d8f0c1f6f7085d983c6011b98"
+                           id="emoji_031"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Hushed Face"
+                           title="Hushed Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/sleepy-face/"
+                        ><img
+                           bkp="4c/30/4c306f2739c55c152db1dfb02891e9ca"
+                           id="emoji_031"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Sleepy Face"
+                           title="Sleepy Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/tired-face/"
+                        ><img
+                           bkp="59/bf/59bf61148bac7f45ea2b9aff15821ff9"
+                           id="emoji_031"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Tired Face"
+                           title="Tired Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/sleeping-face/"
+                        ><img
+                           bkp="31/65/3165b777ea752dd7981156aa84eb95b1"
+                           id="emoji_032"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Sleeping Face"
+                           title="Sleeping Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/relieved-face/"
+                        ><img
+                           bkp="ae/ba/aeba61ffd436a8fbe6ebabd25b99cf0a"
+                           id="emoji_033"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Relieved Face"
+                           title="Relieved Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/nerd-face/"
+                        ><img
+                           bkp="f8/48/f84855c3ac791eb3f06b6437dee646ae"
+                           id="emoji_034"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Nerd Face"
+                           title="Nerd Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-stuck-out-tongue/"
+                        ><img
+                           bkp="93/3a/933a0656ad5885a7f3a83148215e9212"
+                           id="emoji_035"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Stuck-Out Tongue"
+                           title="Face With Stuck-Out Tongue"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-stuck-out-tongue-and-winking-eye/"
+                        ><img
+                           bkp="ed/4a/ed4a3e824a8d5098bdc3d266d11b73ea"
+                           id="emoji_036"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Stuck-Out Tongue and Winking Eye"
+                           title="Face With Stuck-Out Tongue and Winking Eye"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-stuck-out-tongue-and-tightly-closed-eyes/"
+                        ><img
+                           bkp="a0/79/a079ec0855d233f0553ee5331975a16d"
+                           id="emoji_037"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Stuck-Out Tongue and Tightly-Closed Eyes"
+                           title="Face With Stuck-Out Tongue and Tightly-Closed Eyes"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/drooling-face/"
+                        ><img
+                           bkp="25/58/2558fdca4e64d5cd84ffa25f67939b7f"
+                           id="emoji_038"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Drooling Face"
+                           title="Drooling Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/unamused-face/"
+                        ><img
+                           bkp="bb/57/bb573881b722066c250386ef975cd36d"
+                           id="emoji_039"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Unamused Face"
+                           title="Unamused Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-cold-sweat/"
+                        ><img
+                           bkp="27/f1/27f1c9fc07ea4d97d0f0e35d1562f5c6"
+                           id="emoji_040"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Cold Sweat"
+                           title="Face With Cold Sweat"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/pensive-face/"
+                        ><img
+                           bkp="96/48/96484aa7b56ab04d972a3e2459b70c3d"
+                           id="emoji_041"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Pensive Face"
+                           title="Pensive Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/confused-face/"
+                        ><img
+                           bkp="c1/a4/c1a4d704c0b0aafc2a3fb2bd45d1d75b"
+                           id="emoji_042"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Confused Face"
+                           title="Confused Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/upside-down-face/"
+                        ><img
+                           bkp="f2/ba/f2ba5a2517d66d91ff75cb5d0eaf6a80"
+                           id="emoji_043"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Upside-Down Face"
+                           title="Upside-Down Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/money-mouth-face/"
+                        ><img
+                           bkp="31/5a/315a97d263f2868f5f20a6a0919a1360"
+                           id="emoji_044"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Money-Mouth Face"
+                           title="Money-Mouth Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/astonished-face/"
+                        ><img
+                           bkp="86/60/8660a87a3f7e3f5a1f63669c6ee78cac"
+                           id="emoji_045"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Astonished Face"
+                           title="Astonished Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/white-frowning-face/"
+                        ><img
+                           bkp="a0/fb/a0fbc5a19da3a9f628bd5f61fd844bb1"
+                           id="emoji_046"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="White Frowning Face"
+                           title="White Frowning Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/slightly-frowning-face/"
+                        ><img
+                           bkp="4d/35/4d35f1afe4d8bb702df4c9aca7d31afd"
+                           id="emoji_047"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Slightly Frowning Face"
+                           title="Slightly Frowning Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/confounded-face/"
+                        ><img
+                           bkp="88/4e/884efe4941a90cebabb79d15251cf09b"
+                           id="emoji_048"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Confounded Face"
+                           title="Confounded Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/disappointed-face/"
+                        ><img
+                           bkp="02/a7/02a7271ff040c88f5ecf52fc50c81491"
+                           id="emoji_049"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Disappointed Face"
+                           title="Disappointed Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/worried-face/"
+                        ><img
+                           bkp="ae/be/aebe825a3d0e11cd7febcf8c7d9dda46"
+                           id="emoji_050"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Worried Face"
+                           title="Worried Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-look-of-triumph/"
+                        ><img
+                           bkp="17/eb/17ebb8f13d0ba6bb32ead7c6e06b16cb"
+                           id="emoji_051"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Look of Triumph"
+                           title="Face With Look of Triumph"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/crying-face/"
+                        ><img
+                           bkp="72/5e/725e667658feb01e98f7e668930e185b"
+                           id="emoji_052"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Crying Face"
+                           title="Crying Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/loudly-crying-face/"
+                        ><img
+                           bkp="41/a2/41a20d8f6563e2a961877ea50cb51ae2"
+                           id="emoji_053"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Loudly Crying Face"
+                           title="Loudly Crying Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/frowning-face-with-open-mouth/"
+                        ><img
+                           bkp="f7/2d/f72d1e743213b65888f0bcb5a41e9182"
+                           id="emoji_054"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Frowning Face With Open Mouth"
+                           title="Frowning Face With Open Mouth"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/anguished-face/"
+                        ><img
+                           bkp="8f/2b/8f2bcc983f550dd056e064f0dba0c9d6"
+                           id="emoji_055"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Anguished Face"
+                           title="Anguished Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/fearful-face/"
+                        ><img
+                           bkp="a3/44/a3440a7e67241cad6c69c9caf92e9648"
+                           id="emoji_056"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Fearful Face"
+                           title="Fearful Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/weary-face/"
+                        ><img
+                           bkp="72/04/72048efbac366efa33a571955592ba1a"
+                           id="emoji_057"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Weary Face"
+                           title="Weary Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/grimacing-face/"
+                        ><img
+                           bkp="69/a2/69a266a65eb7df6ac9ed1711e49b6d62"
+                           id="emoji_058"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Grimacing Face"
+                           title="Grimacing Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-open-mouth-and-cold-sweat/"
+                        ><img
+                           bkp="02/94/0294fa583dae66697279cd928bc57de5"
+                           id="emoji_059"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Open Mouth and Cold Sweat"
+                           title="Face With Open Mouth and Cold Sweat"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-screaming-in-fear/"
+                        ><img
+                           bkp="8a/c6/8ac63a7b6a5298287aa3a9f7afee3820"
+                           id="emoji_060"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face Screaming in Fear"
+                           title="Face Screaming in Fear"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/flushed-face/"
+                        ><img
+                           bkp="3c/fc/3cfca4c5048232450764d36e254114fe"
+                           id="emoji_061"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Flushed Face"
+                           title="Flushed Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/dizzy-face/"
+                        ><img
+                           bkp="81/ff/81ffc3aab590d576ca7b27cf431f7b67"
+                           id="emoji_062"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Dizzy Face"
+                           title="Dizzy Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/pouting-face/"
+                        ><img
+                           bkp="af/0f/af0f5a22742b3a987306b714392cd822"
+                           id="emoji_063"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Pouting Face"
+                           title="Pouting Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/angry-face/"
+                        ><img
+                           bkp="53/43/5343bb36afec07a7dd72c238da433919"
+                           id="emoji_064"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Angry Face"
+                           title="Angry Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-halo/"
+                        ><img
+                           bkp="e3/e0/e3e03d5a3092be979f60f558c1d84f09"
+                           id="emoji_065"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Halo"
+                           title="Smiling Face With Halo"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-cowboy-hat/"
+                        ><img
+                           bkp="23/51/235182491fb84779403550075e4d02b4"
+                           id="emoji_066"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Cowboy Hat"
+                           title="Face With Cowboy Hat"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/clown-face/"
+                        ><img
+                           bkp="f1/d0/f1d0d3c3658dc3a3271f8e185bf22352"
+                           id="emoji_067"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Clown Face"
+                           title="Clown Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/lying-face/"
+                        ><img
+                           bkp="74/63/7463369f616d5e39d29e42051c989cc6"
+                           id="emoji_068"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Lying Face"
+                           title="Lying Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-medical-mask/"
+                        ><img
+                           bkp="bb/b6/bbb6d49bea60dfd654cda96065a6d628"
+                           id="emoji_069"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Medical Mask"
+                           title="Face With Medical Mask"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-thermometer/"
+                        ><img
+                           bkp="9e/aa/9eaa79f29c75b8e9558d4e236f90589e"
+                           id="emoji_070"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Thermometer"
+                           title="Face With Thermometer"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/face-with-head-bandage/"
+                        ><img
+                           bkp="46/a5/46a5c41ec07e96f975f4f0633407b443"
+                           id="emoji_071"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Face With Head-Bandage"
+                           title="Face With Head-Bandage"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/nauseated-face/"
+                        ><img
+                           bkp="b9/4b/b94b15eaf6039bc7f82428f8d5333d20"
+                           id="emoji_072"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Nauseated Face"
+                           title="Nauseated Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/sneezing-face/"
+                        ><img
+                           bkp="10/2b/102b062e9285f76e21d69dea0fb225e5"
+                           id="emoji_073"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Sneezing Face"
+                           title="Sneezing Face"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/smiling-face-with-horns/"
+                        ><img
+                           bkp="dd/60/dd60607ad67eb05ab6bf0476df20709b"
+                           id="emoji_074"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Smiling Face With Horns"
+                           title="Smiling Face With Horns"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/imp/"
+                        ><img
+                           bkp="25/32/2532144dd8952a9a6d097aff00c6514a"
+                           id="emoji_075"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Imp"
+                           title="Imp"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/japanese-ogre/"
+                        ><img
+                           bkp="d9/14/d914536d666f7d3ca9a64b8e9faaaa4f"
+                           id="emoji_076"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Japanese Ogre"
+                           title="Japanese Ogre"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/japanese-goblin/"
+                        ><img
+                           bkp="62/e1/62e189ebe161b75269c68453a1cea59b"
+                           id="emoji_077"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Japanese Goblin"
+                           title="Japanese Goblin"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li>
+                     <a href="/apple/ios-10.2/skull/"
+                        ><img
+                           id="lastBodyEmoji"
+                           bkp="ac/4a/ac4a46a67bc262e8e0a2dab7601603bf.png"
+                           class="parserEmoji"
+                           src="static/img/transparent.png"
+                           alt="Skull"
+                           title="Skull"
+                           width="72"
+                           height="72"
+                     /></a>
+                  </li>
+
+                  <li><a href="/tips/">Tips</a></li>
+                  <li><a href="/zero-width-joiner/">Zero Width Joiner</a></li>
+                  <li><a href="/modifiers/">Modifiers</a></li>
+               </ul>
+            </article>
+         </div>
+
+         <div class="sidebar main-emojipedia">
+            <div class="block">
+               <h2>Categories</h2>
+               <ul>
+                  <li>
+                     <a href="/people/"><span class="emoji">😃</span> Smileys & People</a>
+                  </li>
+                  <li>
+                     <a href="/nature/"><span class="emoji">🐻</span> Animals & Nature</a>
+                  </li>
+                  <li>
+                     <a href="/food-drink/"><span class="emoji">🍔</span> Food & Drink</a>
+                  </li>
+                  <li>
+                     <a href="/activity/"><span class="emoji">⚽</span> Activity</a>
+                  </li>
+                  <li>
+                     <a href="/travel-places/"><span class="emoji">🌇</span> Travel & Places</a>
+                  </li>
+                  <li>
+                     <a href="/objects/"><span class="emoji">💡</span> Objects</a>
+                  </li>
+                  <li>
+                     <a href="/symbols/"><span class="emoji">🔣</span> Symbols</a>
+                  </li>
+                  <li>
+                     <a href="/flags/"><span class="emoji">🎌</span> Flags</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="block">
+               <h2>Most Popular</h2>
+               <ul>
+                  <li>
+                     <a href="/shrug/"><span class="emoji">🤷</span> Shrug</a>
+                  </li>
+                  <li>
+                     <a href="/face-with-tears-of-joy/"><span class="emoji">😂</span> Face With Tears of Joy</a>
+                  </li>
+                  <li>
+                     <a href="/heavy-black-heart/"><span class="emoji">❤</span> Heavy Black Heart</a>
+                  </li>
+                  <li>
+                     <a href="/christmas-tree/"><span class="emoji">🎄</span> Christmas Tree</a>
+                  </li>
+                  <li>
+                     <a href="/smiling-face-with-heart-shaped-eyes/"><span class="emoji">😍</span> Smiling Face With Heart-Shaped Eyes</a>
+                  </li>
+                  <li>
+                     <a href="/black-heart/"><span class="emoji">🖤</span> Black Heart</a>
+                  </li>
+                  <li>
+                     <a href="/smiling-face-with-smiling-eyes/"><span class="emoji">😊</span> Smiling Face With Smiling Eyes</a>
+                  </li>
+                  <li>
+                     <a href="/fire/"><span class="emoji">🔥</span> Fire</a>
+                  </li>
+                  <li>
+                     <a href="/father-christmas/"><span class="emoji">🎅</span> Father Christmas</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="block">
+               <h2>Latest News</h2>
+               <ul>
+                  <li>
+                     <a href="https://blog.emojipedia.org/turn-a-question-mark-box-into-an-emoji/"
+                        ><span class="emoji">�</span> Turn A Question Mark Box Into An Emoji</a
+                     >
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/how-we-really-use-the-peach/"><span class="emoji">🍑</span> How We Really Use The Peach</a>
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/ios-10-2-emoji-changelog/"><span class="emoji">📲</span> iOS 10.2 Emoji Changelog</a>
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/emoji-dictator-of-the-world/"><span class="emoji">👤</span> Emoji Dictator of the World</a>
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/regional-flag-support-for-unicode-in-2017/"
+                        ><span class="emoji">🏳</span>&nbsp;Regional Flag Support For Unicode in 2017</a
+                     >
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/fidel-castros-death-brings-mixed-emotions/"
+                        ><span class="emoji">🇨🇺</span> Fidel Castro&#39;s Death Brings Mixed Emotions</a
+                     >
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/happy-thanksgiving/"><span class="emoji">🦃</span> Happy Thanksgiving</a>
+                  </li>
+                  <li>
+                     <a href="https://blog.emojipedia.org/proposals-for-shaka-and-west-coast-hand/"
+                        ><span class="emoji">🤙</span> Proposals for Shaka and West Coast Hand</a
+                     >
+                  </li>
+               </ul>
+            </div>
+            <div class="block">
+               <h2>Events</h2>
+               <ul>
+                  <li>
+                     <a href="/australia-day/"><span class="emoji">🇦🇺</span> Australia Day</a>
+                  </li>
+                  <li>
+                     <a href="/bastille-day/"><span class="emoji">🇫🇷</span> Bastille Day</a>
+                  </li>
+                  <li>
+                     <a href="/birthday/"><span class="emoji">🎂</span> Birthday</a>
+                  </li>
+                  <li>
+                     <a href="/black-friday/"><span class="emoji">🛍</span> Black Friday</a>
+                  </li>
+                  <li>
+                     <a href="/canada-day/"><span class="emoji">🇨🇦</span> Canada Day</a>
+                  </li>
+                  <li>
+                     <a href="/carnaval/"><span class="emoji">🇧🇷</span> Carnaval</a>
+                  </li>
+                  <li>
+                     <a href="/chinese-new-year/"><span class="emoji">🐉</span> Chinese New Year</a>
+                  </li>
+                  <li>
+                     <a href="/christmas/"><span class="emoji">🎅</span> Christmas</a>
+                  </li>
+                  <li>
+                     <a href="/cinco-de-mayo/"><span class="emoji">🇲🇽</span> Cinco de Mayo</a>
+                  </li>
+                  <li>
+                     <a href="/dragon-boat-festival/"><span class="emoji">🇨🇳</span> Dragon Boat Festival</a>
+                  </li>
+                  <li>
+                     <a href="/easter/"><span class="emoji">🐰</span> Easter</a>
+                  </li>
+                  <li>
+                     <a href="/emoji-movie/"><span class="emoji">🎥</span> Emoji Movie</a>
+                  </li>
+                  <li>
+                     <a href="/fall-autumn/"><span class="emoji">🍂</span> Fall / Autumn</a>
+                  </li>
+                  <li>
+                     <a href="/fathers-day/"><span class="emoji">👨</span> Father’s Day</a>
+                  </li>
+                  <li>
+                     <a href="/festivus/"><span class="emoji">💪</span> Festivus</a>
+                  </li>
+                  <li>
+                     <a href="/graduation/"><span class="emoji">🎓</span> Graduation</a>
+                  </li>
+                  <li>
+                     <a href="/guy-fawkes/"><span class="emoji">🔥</span> Guy Fawkes</a>
+                  </li>
+                  <li>
+                     <a href="/halloween/"><span class="emoji">🎃</span> Halloween</a>
+                  </li>
+                  <li>
+                     <a href="/hanukkah/"><span class="emoji">🕎</span> Hanukkah</a>
+                  </li>
+                  <li>
+                     <a href="/holi/"><span class="emoji">🕉</span> Holi</a>
+                  </li>
+                  <li>
+                     <a href="/independence-day/"><span class="emoji">🇺🇸</span> Independence Day</a>
+                  </li>
+                  <li>
+                     <a href="/mothers-day/"><span class="emoji">👩</span> Mother’s Day</a>
+                  </li>
+                  <li>
+                     <a href="/new-years-eve/"><span class="emoji">🎊</span> New Year’s Eve</a>
+                  </li>
+                  <li>
+                     <a href="/olympics/"><span class="emoji">🏊</span> Olympics</a>
+                  </li>
+                  <li>
+                     <a href="/queens-birthday/"><span class="emoji">👑</span> Queen’s Birthday</a>
+                  </li>
+                  <li>
+                     <a href="/ramadan/"><span class="emoji">☪</span> Ramadan</a>
+                  </li>
+                  <li>
+                     <a href="/spring/"><span class="emoji">🌱</span> Spring</a>
+                  </li>
+                  <li>
+                     <a href="/st-patricks-day/"><span class="emoji">☘</span> St Patrick’s Day</a>
+                  </li>
+                  <li>
+                     <a href="/summer/"><span class="emoji">☀</span> Summer</a>
+                  </li>
+                  <li>
+                     <a href="/super-bowl/"><span class="emoji">🏈</span> Super Bowl</a>
+                  </li>
+                  <li>
+                     <a href="/thanksgiving/"><span class="emoji">🦃</span> Thanksgiving</a>
+                  </li>
+                  <li>
+                     <a href="/valentines-day/"><span class="emoji">💘</span> Valentine’s Day</a>
+                  </li>
+                  <li>
+                     <a href="/wedding-marriage/"><span class="emoji">👰</span> Wedding / Marriage</a>
+                  </li>
+                  <li>
+                     <a href="/winter/"><span class="emoji">⛄</span> Winter</a>
+                  </li>
+                  <li>
+                     <a href="/winter-olympics/"><span class="emoji">🎿</span> Winter Olympics</a>
+                  </li>
+                  <li>
+                     <a href="/world-cup/"><span class="emoji">⚽</span> World Cup</a>
+                  </li>
+                  <li>
+                     <a href="/world-emoji-day/"><span class="emoji">🌎</span> World Emoji Day</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <!--
     <script type="text/javascript" src="/static/js/site.8aa77f25f93b.js" charset="utf-8"></script>
     
 -->
-<script type="text/javascript" src="static/☁ronErlihStudio.js"></script>
+      <script type="text/javascript" src="static/☁ronErlihStudio.js"></script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      <script>
+         (function (i, s, o, g, r, a, m) {
+            i["GoogleAnalyticsObject"] = r;
+            (i[r] =
+               i[r] ||
+               function () {
+                  (i[r].q = i[r].q || []).push(arguments);
+               }),
+               (i[r].l = 1 * new Date());
+            (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+         })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
 
-  ga('create', 'UA-89495023-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-
-
-</body>
+         ga("create", "UA-89495023-1", "auto");
+         ga("send", "pageview");
+      </script>
+   </body>
 </html>
-
-

@@ -25,7 +25,20 @@ img {
    margin: 0;
    padding: 0;
 }
-
+#top-links {
+   position: fixed;
+   display: inline-block;
+   opacity: 1;
+   z-index: 1100;
+   left: 5px;
+   top: 5px;
+   padding:5px;
+   color: cornflowerblue;
+   line-height: 20px;
+}
+.nft-emoji {
+   z-index: 400!important;
+}
 #emojiListDiv {
    z-index: 1000;
    position: relative;
