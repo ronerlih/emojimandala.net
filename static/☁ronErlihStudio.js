@@ -11,6 +11,7 @@ let nfts = {
    },
 };
 
+
 const nftList = document.querySelector("#nft > .collection");
 var j = 0;
 var containerSize = window.innerHeight > document.body.clientWidth
@@ -289,17 +290,21 @@ function checkForBodyLoad() {
    }
    lastEmoji.src = "static/img/emoji_00081.png";
 }
+
 function fetchOpeanSeaApi() {
    fetch(
-      "https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425/?format=json"
+      'https://nft.emojimandala.net/nfts'
    )
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((apiNfts) => {
          if (Array.isArray(apiNfts)) {
             return console.log({ apiNfts });
          }
-         const { creator, description, top_ownerships, image_url, traits } = apiNfts;
-         nfts = { 0: { creator, description, top_ownerships, image_url, traits } };
+         else {
+
+            const { creator, description, top_ownerships, image_url, traits } = apiNfts;
+            nfts = { 0: { creator, description, top_ownerships, image_url, traits } };
+         }
 
          loadNFTs();
       });
