@@ -64,7 +64,7 @@ var my_style = `
       position: fixed;
       display: inline-block;
       opacity: 1;
-      z-index: 1100;
+      z-index: 1500;
       left: 5px;
       top: 5px;
       padding:5px;
