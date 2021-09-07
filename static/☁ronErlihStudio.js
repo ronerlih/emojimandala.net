@@ -11,7 +11,6 @@ let nfts = {
    },
 };
 
-
 const nftList = document.querySelector("#nft > .collection");
 var j = 0;
 var containerSize = window.innerHeight > document.body.clientWidth
@@ -100,7 +99,7 @@ var my_style = `
       transform-origin: center;
    }
    #emojiListDiv img {
-      clip:rect(2px,70px,70px,2px)
+      clip:rect(1px,71px,71px,1px)
    }
   
    // @keyframes spin{
@@ -117,7 +116,7 @@ var my_style = `
  }
    @-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}`;
    var mobile_style = my_style;
-   "#emoji-container img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
+   "#emoji-container img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
 // "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-82deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
 // "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.8}#emojiListDiv{z-index:1000;position:relative;top:calc(50vh);height:auto;width:auto;-webkit-perspective:500px;-moz-perspective:500px;-o-perspective:500px;perspective:500px;-webkit-animation-name:spin;-webkit-animation-duration:54s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-name:spin;-moz-animation-duration:54s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-ms-animation-name:spin;-ms-animation-duration:54s;-ms-animation-iteration-count:infinite;-ms-animation-timing-function:linear;animation-name:spin;animation-duration:54s;animation-iteration-count:infinite;animation-timing-function:linear}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(0,0)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(0,0)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(0,0)}70%{-webkit-transform:rotate(-252deg) scale(0,0)}100%{-webkit-transform:rotate(-360deg) scale(0,0)}}@keyframes spin{0%{transform:rotate(0) scale(1,1)}20%{transform:rotate(-82deg) scale(1,1)}40%{transform:rotate(-144deg) scale(1,1)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1,1)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
 // "#emojiListDiv,img{margin:0;padding:0}.fadeOut{-o-animation:fadeOut 10s 1 linear forwards;-ms-animation:fadeOut 10s 1 linear forwards;-moz-animation:fadeOut 10s 1 linear forwards;-webkit-animation:fadeOut 10s 1 linear forwards;animation:fadeOut 10s 1 linear forwards}.fadeSlow{-o-animation:fadeOutSlow 1s 1 linear forwards;-ms-animation:fadeOutSlow 1s 1 linear forwards;-moz-animation:fadeOutSlow 1s 1 linear forwards;-webkit-animation:fadeOutSlow 1s 1 linear forwards;animation:fadeOutSlow 1s 1 linear forwards}img{opacity:.7}#emojiListDiv{z-index:1000}#emojiListDiv img{clip:rect(2px,70px,70px,2px)}@-ms-keyframes spin{0%{-ms-transform:rotate(0) scale(1.5,1.5)}25%{-ms-transform:rotate(-90deg) scale(0,0)}40%{-ms-transform:rotate(-144deg) scale(1,1)}70%{-ms-transform:rotate(-252deg) scale(2.4,2.4)}100%{-ms-transform:rotate(-360deg) scale(1.5,1.5)}}@-moz-keyframes spin{0%{-moz-transform:rotate(0) scale(1.5,1.5)}25%{-moz-transform:rotate(-90deg) scale(0,0)}40%{-moz-transform:rotate(-144deg) scale(1,1)}70%{-moz-transform:rotate(-252deg) scale(2.4,2.4)}100%{-moz-transform:rotate(-360deg) scale(1.5,1.5)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0) scale(1.5,1.5)}25%{-webkit-transform:rotate(-90deg) scale(0,0)}40%{-webkit-transform:rotate(-144deg) scale(1,1)}70%{-webkit-transform:rotate(-252deg) scale(2.4,2.4)}100%{-webkit-transform:rotate(-360deg) scale(1.5,1.5)}}@keyframes spin{0%{transform:rotate(0) scale(1.5,1.5)}20%{transform:rotate(-72deg) scale(2.9,2.9)}40%{transform:rotate(-144deg) scale(1.4,1.4)}70%{transform:rotate(-252deg) scale(0,0)}100%{transform:rotate(-360deg) scale(1.5,1.5)}}@-o-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%,50%{opacity:1}100%{opacity:0}}@-o-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-ms-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-moz-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}@keyframes fadeOutSlow{0%{opacity:1}100%{opacity:0}}";
@@ -290,24 +289,32 @@ function checkForBodyLoad() {
    }
    lastEmoji.src = "static/img/emoji_00081.png";
 }
-
 function fetchOpeanSeaApi() {
-   fetch(
-      'https://nft.emojimandala.net/nfts'
-   )
-      .then(res => res.json())
-      .then((apiNfts) => {
-         if (Array.isArray(apiNfts)) {
-            return console.log({ apiNfts });
-         }
-         else {
+   // fetch(
+   //    "https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425/?format=json"
+   // )
+   //    .then((res) => res.json())
+   //    .then((apiNfts) => {
+   //       if (Array.isArray(apiNfts)) {
+   //          return console.log({ apiNfts });
+   //       }
+   //       const { creator, description, top_ownerships, image_url, traits } = apiNfts;
+   //       nfts = { 0: { creator, description, top_ownerships, image_url, traits } };
 
-            const { creator, description, top_ownerships, image_url, traits } = apiNfts;
-            nfts = { 0: { creator, description, top_ownerships, image_url, traits } };
-         }
+   //       loadNFTs();
+   //    });
+fetch(
+   'https://nft.emojimandala.net/nfts'
+)
+   .then(res => res.json())
+   .then((apiNfts) => {
+      apiNfts.forEach(nft => {
+         nfts[nft.emoji_id] = nft
+      })
+     
 
-         loadNFTs();
-      });
+      loadNFTs();
+   });
 }
 function loadNFTs() {
    Object.values(nfts).forEach((nft) => {
@@ -315,8 +322,8 @@ function loadNFTs() {
       itmeEl.classList.add("collection-item", "avatar");
       // creator, description,top_ownerships, image_url
       itmeEl.innerHTML = `
-           <img class="nft-icon rotateHue" src=${nft.image_url} alt="" class="circle">
-           <div class="nft-title"><em>${nft.traits[3].trait_type}</em></div>
+           <img class="nft-icon " src=${nft.image_url} alt="" class="circle">
+           <div class="nft-title"><em>${nft.name}</em><strong>${nft.nickname}</strong></div>
            <p class="nft-owner">
            <p>patron: </p>
            <img class="nft-icon" src=${nft.top_ownerships[0]?.owner.profile_img_url} alt="" class="circle">
@@ -383,34 +390,44 @@ function desktopClient() {
          nicknameContainer.style.position = "relative";
          nicknameContainer.style.zIndex = "30";
          const nicknameEl = document.createElement("div");
-         nicknameEl.classList.add("rotateHue");
+         const imgNftContainer = document.createElement("div");
+         // nicknameEl.classList.add("rotateHue");
 
          nicknameEl.style = `
          font-size: 1em;
          word-spacing: 2px;
          font-family: georgia;
-         color: #c08219;
-         left: 75px;
+         color: cornflowerblue;
+         left: 78px;
          font-style: italic;
-         top: 35px;
+         top: 33px;
          width: 160px;
+         font-weight: 600;
          position: absolute;
-         -webkit-text-stroke: 0.5px beige;
-         text-stroke: 0.5px beige;
-
+         border-radius: 80px;
 `
+         imgNftContainer.style = `
+         border: 2px dashed cornflowerblue;
+         border-radius: 45px;
+         
+         width: 72px;         `
          // creator, description,top_ownerships, image_url
 
-         const nicknameText = nfts[i].traits[3].trait_type;
+         const nicknameText = nfts[i].nickname;
+         if(i === 609) console.log(spriteImages[i])
          if (nicknameText) {
+            
             nicknameEl.textContent = nicknameText
             nicknameContainer.classList.add("nft-emoji");
             nicknameContainer.appendChild(nicknameEl);
-            spriteImages[i].classList.add("rotateHue");
+            spriteImages[i].classList.add("circle");
 
          }
          spriteImages[i].style.width = "72px";
-         nicknameContainer.appendChild(spriteImages[i]);
+         if (!nicknameText) {nicknameContainer.appendChild(spriteImages[i]);}
+         else { imgNftContainer.appendChild(spriteImages[i]);
+            nicknameContainer.appendChild(imgNftContainer)
+         }
          spriteImages[i] = nicknameContainer;
       }
 
