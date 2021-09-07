@@ -38,7 +38,7 @@
             position: absolute;
             font-family: georgia;
             left: 5px;
-            bottom: 8px;
+            top: calc(100vh - 50px);
             font-size: 0.8em;
             line-height: 0.5;
             z-index: 1000;
@@ -148,10 +148,9 @@
          #nft {
             border: 2px;
             padding: 10px;
-            position: absolute;
             font-size: 1rem;
-            left: 0px;
-            top: calc(100vh - 80px);
+            margin-top: 90vh;
+            display: inline-block;
          }
          #nft > ul {
             list-style-type: none;
@@ -167,9 +166,12 @@
             word-break: keep-all;
             margin-top: 10px;
          }
+         #nft li div {
+            /* flex: 174px 0 1; */
+         }
          .nft-icon {
-            flex: 30px 0 0;
-
+            flex: 40px 0 0;
+            border-radius: 30px;
          }
          .nft-title {
             flex: 1.5;
@@ -264,7 +266,7 @@
          .rotateHue {
             animation: rotateHue 100s infinite;
          }
-         .circle{
+         .circle {
             border-radius: 45px;
          }
          @keyframes rotateHue {
@@ -275,10 +277,10 @@
                filter: hue-rotate(360deg);
             }
          }
+        
       </style>
    </head>
    <body>
-      
       <div id="landing">
          <div id="bestOnSpan">
             <h2 style="margin-bottom: 0">emojiMandala.net</h2>
@@ -308,14 +310,14 @@
             </a>
          </div>
       </div>
-    
+
       <div id="emojiListDiv"></div>
       <div id="spanContainter">
          <div id="top-links">
             <div>
                <a href="https://opensea.io/collection/emoji-mandala" target="_blank"> ⛵ View the collection on opensea.io</a>
             </div>
-   
+
             <div>
                <a href="https://nft.emojimandala.net/" target="_blank"> 🤦 About the collection</a>
             </div>

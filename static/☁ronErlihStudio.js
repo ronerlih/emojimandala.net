@@ -324,13 +324,14 @@ function loadNFTs() {
       itmeEl.innerHTML = `
            <img class="nft-icon " src=${nft.image_url} alt="" class="circle">
            <div class="nft-title"><em>${nft.name}</em><strong>${nft.nickname}</strong></div>
-           <p class="nft-owner">
-           <p>patron: </p>
+           <p style='display:flex; flex:1.5; align-items:center'> patron: 
            <img class="nft-icon" src=${nft.top_ownerships[0]?.owner.profile_img_url} alt="" class="circle">
-           <em>${nft.top_ownerships[0]?.owner.user.username}</em></p>
+           <em>${nft.top_ownerships[0]?.owner.user.username}</em>
+           </p>
            <div class="nft-link">
             <a href=${nft.link} ><i class="material-icons">View on OpenSea.io</i></a>
            </div>
+
          `;
       nftList.appendChild(itmeEl);
    });
