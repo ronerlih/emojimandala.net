@@ -40,7 +40,7 @@ var cssInterval;
 var emojiListDiv = document.getElementById("emojiListDiv");
 var counterDrop = 0;
 var parseCounter = 0;
-console.log(window.innerHeight)
+// console.log(window.innerHeight)
 var safariElementAsTextNode =
    '<h2 style="margin:30px;">emojiMandala.net</h2><p>currently in development for Safari on a desktop.<br>please visit with a different browser (Chrome, Firefox, Opera, or IE)<br><br>or visit on your mobile (also in Safari).</p><br><img width="400" src="http://emojimandala.net/static/img/ipad_spiral_light.gif"/><div id="creditSpanSafari"><a href="http://ronErlihStudio.com" target="_blank"><br><br><img width="50" height="auto" src="http://emojimandala.net/static/img/cloud_500.png"/><h3>ronErlihStudio</h3></a>';
 var my_style = `
@@ -193,7 +193,7 @@ function isSafari() {
 function reloadImageElement() {
    setTimeout(function () {
       this.src = this.src + "?timestamp=" + date.getTime();
-      console.log("in reloadImageElement on: " + this.src);
+      // console.log("in reloadImageElement on: " + this.src);
    }, 1000);
 }
 
@@ -214,7 +214,7 @@ function loadEmojis() {
          spriteImages.unshift(document.createElement("img"));
          $(spriteImages[0]).attr("id", "emoji_000");
          $(spriteImages[0]).attr("src", "/static/img/node-root-face.png");
-         console.log("sprite images increment");
+         // console.log("sprite images increment");
          incrementCounter();
       }
    }
@@ -259,7 +259,7 @@ function platformStylesAndLogic() {
 }
 
 function incrementCounter() {
-   console.log("onload event fired on image no. " + counter);
+   // console.log("onload event fired on image no. " + counter);
    counter++;
 
    if (true) {
@@ -311,9 +311,10 @@ fetch(
       apiNfts.forEach(nft => {
          nfts[nft.emoji_id] = nft
       })
+      console.log({nfts})
+      loadNFTs();
      
 
-      loadNFTs();
    });
 }
 function loadNFTs() {
@@ -326,7 +327,7 @@ function loadNFTs() {
            <div class="nft-title"><em>${nft.name}</em><strong>${nft.nickname}</strong></div>
            <p style='display:flex; flex:1.5; align-items:center'> patron: 
            <img class="nft-icon" src=${nft.top_ownerships[0]?.owner.profile_img_url} alt="" class="circle">
-           <em>${nft.top_ownerships[0]?.owner.user.username}</em>
+           <em>${nft.top_ownerships[0]?.owner?.user?.username || "openSea"}</em>
            </p>
            <div class="nft-link">
             <a href=${nft.link} ><i class="material-icons">View on OpenSea.io</i></a>
@@ -479,7 +480,7 @@ function mobileClient() {
    var angle;
 
    var windowWidth = window.innerWidth;
-   console.log("screen width: " + windowWidth);
+   // console.log("screen width: " + windowWidth);
    var jsWindowWidth = windowWidth;
    var windowHeight = screen.height;
    var containerHeight = 0;
