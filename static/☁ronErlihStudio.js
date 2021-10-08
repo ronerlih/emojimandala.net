@@ -99,7 +99,7 @@ var my_style = `
       transform-origin: center;
    }
    #emojiListDiv img {
-      clip:rect(1px,71px,71px,1px)
+      clip:rect(2px,70px,70px,2px)
    }
   
    // @keyframes spin{
