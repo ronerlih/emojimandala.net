@@ -99,7 +99,7 @@ var my_style = `
       transform-origin: center;
    }
    #emojiListDiv img {
-      clip:rect(2px,70px,70px,2px)
+      clip:rect(3px,69px,69px,3px)
    }
   
    // @keyframes spin{
@@ -387,6 +387,7 @@ function desktopClient() {
    }, 1000);
 
    function addEmoji() {
+      if (i === 10) console.log(spriteImages[i])
       if (nfts[i]) {
          const nicknameContainer = document.createElement("div");
          nicknameContainer.style.position = "relative";
@@ -416,7 +417,8 @@ function desktopClient() {
          // creator, description,top_ownerships, image_url
 
          const nicknameText = nfts[i].nickname;
-         if(i === 609) console.log(spriteImages[i])
+         if(i === 609) console.log('img:',spriteImages[i])
+
          if (nicknameText) {
             
             nicknameEl.textContent = nicknameText
