@@ -447,7 +447,7 @@ function desktopClient() {
          JsListItems[i].style.cssText = "display: none;";
       }
       spriteImages[i].style.cssText =
-         `position: absolute;left: ${cssLeft}px;top: ${cssTop}px;${prefix}transform: rotateZ(${angle * angle * 2 + 220}deg) ;opacity:calc(0.6 + ${angle / 100});width: ${emojiSize}px!important;height: ${emojiSize}px!important;z-index: ${nfts[i] ? '200!important;' : '200;'}border: 0;height: auto; display:block;visibility:visible;`;
+         `position: absolute;left: ${cssLeft}px;top: ${cssTop}px;${prefix}transform: rotateZ(${angle * angle * 2 + 220}deg) ;width: ${emojiSize}px!important;height: ${emojiSize}px!important;z-index: ${nfts[i] ? '200!important;' : '200;'}border: 0;height: auto; display:block;visibility:visible;`;
 
       emojiListDiv.appendChild(spriteImages[i]);
 
