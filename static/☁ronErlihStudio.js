@@ -10,6 +10,9 @@ let nfts = {
       link: "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/73815938769340366384073838527422825549722629275663006887499167190737353703425",
    },
 };
+document.addEventListener("click", function(e) {
+     toggleFullScreen();
+ }, false);
 
 const nftList = document.querySelector("#nft > .collection");
 var j = 0;
@@ -560,3 +563,12 @@ function mobileClient() {
       i++;
    }
 }
+function toggleFullScreen() {
+   if (!document.fullscreenElement) {
+       document.documentElement.requestFullscreen();
+   } else {
+     if (document.exitFullscreen) {
+       document.exitFullscreen();
+     }
+   }
+ }
