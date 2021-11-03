@@ -1,3 +1,5 @@
+var reloadInterval = setInterval(() => location.reload(), 1000 * 60 * 8)
+
 // creator, description,top_ownerships, image_url
 let nfts = {
    0: {
@@ -419,7 +421,7 @@ function desktopClient() {
          // creator, description,top_ownerships, image_url
 
          const nicknameText = nfts[i].nickname;
-         if(i === 609) console.log('img:',spriteImages[i])
+         // if(i === 609) console.log('img:',spriteImages[i])
 
          if (nicknameText) {
             
@@ -450,7 +452,7 @@ function desktopClient() {
 
       emojiListDiv.appendChild(spriteImages[i]);
 
-      emojiListDiv.style.cssText += "left: " + screen.width / 2 - $(emojiListDiv).width() / 2 + "px;";
+      // emojiListDiv.style.cssText += "left: " + screen.width / 2 - $(emojiListDiv).width() / 2 + "px;";
       i++;
       if (i >= spriteImages.length) {
          clearInterval(forInterval);
